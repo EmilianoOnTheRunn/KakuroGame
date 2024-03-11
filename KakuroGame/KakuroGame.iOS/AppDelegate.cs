@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.IO;
 
 using Foundation;
 using UIKit;
@@ -23,7 +24,11 @@ namespace KakuroGame.iOS
         public override bool FinishedLaunching(UIApplication app, NSDictionary options)
         {
             global::Xamarin.Forms.Forms.Init();
-            LoadApplication(new App());
+            string dbName = "myDB.sqlite";
+            string folderPath = Path.Combine(System.Environment.GetFolderPath(System.Environment.SpecialFolder.Personal), "..", "Library");// personal to library folder nav
+            string databaseLocationPath = Path.Combine(folderPath, dbName);
+
+            LoadApplication(new App(databaseLocationPath));
 
             return base.FinishedLaunching(app, options);
         }

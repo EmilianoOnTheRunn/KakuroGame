@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<ContentPage
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+
+    x:Class="KakuroGame.LoginPage">
+
+    <NavigationPage.HasNavigationBar>
+    <x:Boolean>False</x:Boolean>
+    </NavigationPage.HasNavigationBar>
+
+    <StackLayout>
+
+        <Frame Style="{StaticResource Background}">
+
+            <StackLayout VerticalOptions="CenterAndExpand" Margin="20">
+            <Label Text="Welcome to the Kakuro Game"  Style="{StaticResource Titles}"/>
+
+            <Entry Placeholder="Username"  TextColor="{StaticResource myFavColor}" x:Name="userNameEntry"/>
+            <Entry Placeholder="Password" TextColor="{StaticResource myFavColor}" x:Name="passwordEntry"/>
+
+            <Button Text="Login" Style="{StaticResource warningButton}" Clicked="Button_Clicked"/>
+
+        </StackLayout>
+
+        </Frame>
+
+        
+
+    </StackLayout>
+          
+
+     
+
+</ContentPage>
+
