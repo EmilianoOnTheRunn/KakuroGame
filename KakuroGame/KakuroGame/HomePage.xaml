@@ -5,11 +5,15 @@
     xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
     ios:Page.UseSafeArea="True"
     xmlns:local="clr-namespace:KakuroGame"
-    x:Class="KakuroGame.HomePage">
+    x:Class="KakuroGame.HomePage"
+    NavigationPage.HasNavigationBar="False"
+    Style="{StaticResource tabbar}">
 
-    <local:LevelsPage Title="Levels"/>
-    <local:RecordPage Title="Record"/>
-    <local:ProfilePage Title="Profile" />
+
+
+    <local:LevelsPage Title="Levels" IconImageSource="levels"/>
+    <local:RecordPage Title="Record" IconImageSource="record"/>
+    <local:ProfilePage Title="Profile" IconImageSource="profile"/>
 
 </TabbedPage>
 

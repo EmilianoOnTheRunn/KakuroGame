@@ -12,7 +12,7 @@ namespace KakuroGame
 			InitializeComponent ();
 		}
 
-        void Button_Clicked(System.Object sender, System.EventArgs e)
+        void btnLogin_Clicked(System.Object sender, System.EventArgs e)
         {
             bool isEmailEmpty = string.IsNullOrEmpty(userNameEntry.Text);
             bool isPassEmpty = string.IsNullOrEmpty(passwordEntry.Text);
@@ -25,6 +25,16 @@ namespace KakuroGame
             {
                 Navigation.PushAsync(new HomePage());
             }
+        }
+
+        void btnForgotPassword_Clicked(System.Object sender, System.EventArgs e)
+        {
+            Navigation.PushAsync(new PasswordPage());
+        }
+
+        void btnSignIn_Clicked(System.Object sender, System.EventArgs e)
+        {
+            Navigation.PushAsync(new RegisterPage());
         }
     }
 }

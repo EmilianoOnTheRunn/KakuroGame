@@ -2,9 +2,54 @@
 <ContentPage
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-    x:Class="KakuroGame.ProfilePage">
-    <ContentPage.Content>
-        
-    </ContentPage.Content>
+    x:Class="KakuroGame.ProfilePage"
+    >
+
+    <StackLayout>
+
+        <Frame Style="{StaticResource Background}">
+
+            <StackLayout>
+
+                <StackLayout  >
+                    <Grid RowSpacing="0" ColumnSpacing="0">
+
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="4*"/> 
+                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="0"/> 
+                        </Grid.RowDefinitions>
+
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition /> 
+                            <ColumnDefinition /> 
+                        </Grid.ColumnDefinitions>
+
+                         <Image Source="profileL" Style="{StaticResource profileIcon}" />
+                         <Label Text="Username" Style="{StaticResource labelIcon}"  />        
+
+                    </Grid>
+                </StackLayout>
+
+                <StackLayout  Margin="0,100,0,0">
+
+                    <Entry Placeholder="Username" Style="{StaticResource profileEntrys}" />
+                    <BoxView Style="{StaticResource line}"/>
+                    <Entry Placeholder="Password" Style="{StaticResource profileEntrys}" />
+                    <BoxView Style="{StaticResource line}"/>
+                    <Button Text="Edit" Clicked="btnEdit_Clicked" x:Name="btnEdit" Style="{StaticResource buttons}"/>
+                    <Button Text="Delete account" Clicked="btnDelete_Clicked" x:Name="btnDelete" Style="{StaticResource buttons}" Margin="90,10"/>
+                    <Button Text="Sign Out" Clicked="btnSignOut_Clicked" x:Name="btnSignOut" Style="{StaticResource buttons}"/>
+
+                </StackLayout>
+
+            </StackLayout>
+
+
+            
+        </Frame>
+
+    </StackLayout>
+
 </ContentPage>
 

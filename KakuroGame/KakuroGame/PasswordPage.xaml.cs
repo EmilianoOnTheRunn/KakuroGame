@@ -5,9 +5,9 @@ using Xamarin.Forms;
 
 namespace KakuroGame
 {	
-	public partial class RegisterPage : ContentPage
+	public partial class PasswordPage : ContentPage
 	{	
-		public RegisterPage ()
+		public PasswordPage ()
 		{
 			InitializeComponent ();
 		}

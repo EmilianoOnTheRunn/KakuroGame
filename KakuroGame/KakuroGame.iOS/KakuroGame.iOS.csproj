@@ -113,6 +113,15 @@
     <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon20.png">
       <Visible>false</Visible>
     </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\profile.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\levels.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\record.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\profile.imageset\profile.png" />
+    <ImageAsset Include="Assets.xcassets\levels.imageset\levels.png" />
+    <ImageAsset Include="Assets.xcassets\record.imageset\record.png" />
+    <ImageAsset Include="Assets.xcassets\profileL.imageset\profileL.png" />
+    <ImageAsset Include="Assets.xcassets\profileL.imageset\Contents.json" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -123,8 +132,8 @@
     <Reference Include="System.Numerics.Vectors" />
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="Xamarin.Forms" Version="5.0.0.2196" />
-    <PackageReference Include="Xamarin.Essentials" Version="1.7.0" />
+    <PackageReference Include="Xamarin.Forms" Version="5.0.0.2622" />
+    <PackageReference Include="Xamarin.Essentials" Version="1.8.1" />
     <PackageReference Include="sqlite-net-pcl">
       <Version>1.8.116</Version>
     </PackageReference>

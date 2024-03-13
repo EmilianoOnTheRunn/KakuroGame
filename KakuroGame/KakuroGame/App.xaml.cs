@@ -17,9 +17,11 @@ namespace KakuroGame
         public App(string databaseLocation)
         {
             InitializeComponent();
-
             MainPage = new NavigationPage(new LoginPage());
+            //Xamarin.Forms.NavigationPage.SetHasNavigationBar(this, false);
+            //NavigationPage.SetHasNavigationBar(this, false);
             DatabaseLocation = databaseLocation;
+
         }
 
         protected override void OnStart ()
