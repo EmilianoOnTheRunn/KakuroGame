@@ -33,6 +33,13 @@
                 <Setter Property="Grid.Column" Value="1"/>
             </Style>
 
+            <Style x:Key="labelRecord" TargetType="Label">
+                <Setter Property="Margin" Value="50,0,0,0"/>
+                <Setter Property="TextColor" Value="{StaticResource WhiteColor}"/>
+                <Setter Property="FontSize" Value="35"/>
+                <Setter Property="FontAttributes" Value="Bold"/>
+            </Style>
+
             <Style x:Key="profileEntrys" TargetType="Entry">
                 <Setter Property="VerticalOptions" Value="Center"/>
                 <Setter Property="HorizontalOptions" Value="CenterAndExpand"/>
@@ -143,6 +150,22 @@
                         <LinearGradientBrush>
                             <GradientStop Color="Black" Offset="0.1"/>
                             <GradientStop Color="White" Offset="1.0" />
+                        </LinearGradientBrush>
+                    </Setter.Value>
+                </Setter>
+            </Style>
+
+            <Style x:Key="BubbleRecord" TargetType="Frame">
+                <Setter Property="BorderColor" Value="Black"/>
+                <Setter Property="HasShadow" Value="True"/>
+                <Setter Property="CornerRadius" Value="12"/>
+                <Setter Property="VerticalOptions" Value="FillAndExpand"/>
+                <Setter Property="HorizontalOptions" Value="FillAndExpand"/>
+                <Setter Property="Background">
+                    <Setter.Value>
+                        <LinearGradientBrush EndPoint="0,1">
+                            <GradientStop Color="LightGray" Offset="0.1"/>
+                            <GradientStop Color="Black" Offset="1.0" />
                         </LinearGradientBrush>
                     </Setter.Value>
                 </Setter>

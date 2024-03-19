@@ -38,7 +38,7 @@
                     </Frame>
 
                     <Frame Style="{StaticResource Bubble2}">  
-                        <Entry Placeholder="Password" Style="{StaticResource Inputs}" x:Name="passwordEntry"/>
+                        <Entry IsPassword="True" Placeholder="Password" Style="{StaticResource Inputs}" x:Name="passwordEntry"/>
                     </Frame>
 
                     <Button Text="Login" Style="{StaticResource btnLogin}" Clicked="btnLogin_Clicked" x:Name="btnLogin"/>

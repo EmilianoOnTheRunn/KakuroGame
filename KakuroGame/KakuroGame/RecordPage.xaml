@@ -4,9 +4,57 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     x:Class="KakuroGame.RecordPage">
 
+
     <StackLayout>
-        <Frame Style="{StaticResource Background}"/>
+
+        <Frame Style="{StaticResource Background}">
+
+            <StackLayout>
+                
+
+                <StackLayout  >
+                    <Label Text="Your Record" Style="{StaticResource labelIcon}" FontAttributes="Bold" />        
+                </StackLayout>
+
+                <Frame Style="{StaticResource BubbleRecord}">
+                    <StackLayout>
+                        <Grid RowSpacing="0" ColumnSpacing="0">
+
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="4*"/> 
+                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="0"/> 
+                        </Grid.RowDefinitions>
+
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition /> 
+                            <ColumnDefinition /> 
+                        </Grid.ColumnDefinitions>
+
+
+                         <Label Text="Level" Style="{StaticResource labelRecord}" Grid.Column="1" />
+                         <Label Text="Time" Style="{StaticResource labelRecord}" />
+                            <ListView x:Name="recordListView" ItemSelected="recordListView_ItemSelected" BackgroundColor="Transparent">
+                            <ListView.ItemTemplate>
+                                <DataTemplate>
+                                    <TextCell Text="Record" TextColor="Black"/>
+                                </DataTemplate>
+
+                            </ListView.ItemTemplate>
+                        </ListView>
+
+                    </Grid>
+                    </StackLayout>
+                </Frame>
+
+            </StackLayout>
+
+
+            
+        </Frame>
 
     </StackLayout>
+
+
 </ContentPage>
 

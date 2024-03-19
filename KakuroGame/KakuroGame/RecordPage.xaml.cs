@@ -11,6 +11,10 @@ namespace KakuroGame
 		{
 			InitializeComponent ();
 		}
-	}
+
+        void recordListView_ItemSelected(System.Object sender, Xamarin.Forms.SelectedItemChangedEventArgs e)
+        {
+        }
+    }
 }
 

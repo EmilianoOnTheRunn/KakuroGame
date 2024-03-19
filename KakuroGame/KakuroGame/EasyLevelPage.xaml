@@ -2,9 +2,10 @@
 <ContentPage
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-    x:Class="KakuroGame.LevelsPage">
+    x:Class="KakuroGame.EasyLevelPage"
+    NavigationPage.HasNavigationBar="False">
 
-     <StackLayout>
+ <StackLayout>
 
         <Frame Style="{StaticResource Background}">
 
@@ -16,12 +17,11 @@
 
                 <StackLayout  Margin="0,100,0,0">
 
-                    <Button Text="Easy" Style="{StaticResource profileEntrys}" Clicked="btnEasy_Clicked" x:Name="btnEasy"/>
                     <BoxView Style="{StaticResource line}"/>
-                    <Button Text="Medium" Style="{StaticResource profileEntrys}" Clicked="btnMedium_Clicked" x:Name="btnMedium"/>
                     <BoxView Style="{StaticResource line}"/>
-                    <Button Text="Hard" Style="{StaticResource profileEntrys}" Clicked="btnHard_Clicked" x:Name="btnHard"/>
                     <BoxView Style="{StaticResource line}"/>
+                    <Label Text="3x3" Style="{StaticResource labelIcon}" />
+                    <Button Text="Done" Style="{StaticResource buttons}" x:Name="btnDone" Clicked="btnDone_Clicked"/>
 
 
                 </StackLayout>
@@ -33,6 +33,5 @@
         </Frame>
 
     </StackLayout>
-
 </ContentPage>
 

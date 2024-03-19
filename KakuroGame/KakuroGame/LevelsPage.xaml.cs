@@ -11,6 +11,21 @@ namespace KakuroGame
 		{
 			InitializeComponent ();
 		}
-	}
+
+        void btnEasy_Clicked(System.Object sender, System.EventArgs e)
+        {
+            Navigation.PushAsync(new EasyLevelPage());
+        }
+
+        void btnMedium_Clicked(System.Object sender, System.EventArgs e)
+        {
+            Navigation.PushAsync(new MediumLevelPage());
+        }
+
+        void btnHard_Clicked(System.Object sender, System.EventArgs e)
+        {
+            Navigation.PushAsync(new HardLevelPage());
+        }
+    }
 }
 

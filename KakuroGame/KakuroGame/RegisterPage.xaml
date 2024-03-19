@@ -39,7 +39,7 @@
                         <Entry Placeholder="Confirm Password" Style="{StaticResource Inputs}" x:Name="confirmPasswordEntry"/>
                     </Frame>
 
-                    <Button Text="Sign In" Style="{StaticResource btnLogin}" Clicked="Button_Clicked"/>
+                    <Button Text="Sign In" Style="{StaticResource btnLogin}" Clicked="signIn_Clicked" x:Name="signIn"/>
 
                 </StackLayout>
             

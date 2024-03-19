@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
-
+using KakuroGame.Model;
+using SQLite;
 using Xamarin.Forms;
 
 namespace KakuroGame
@@ -14,16 +15,44 @@ namespace KakuroGame
 
         void btnLogin_Clicked(System.Object sender, System.EventArgs e)
         {
-            bool isEmailEmpty = string.IsNullOrEmpty(userNameEntry.Text);
+            bool isUsernameEmpty = string.IsNullOrEmpty(userNameEntry.Text);
             bool isPassEmpty = string.IsNullOrEmpty(passwordEntry.Text);
-            if (isEmailEmpty || isPassEmpty)
+            string username = userNameEntry.Text;
+            string password = passwordEntry.Text;
+
+            if (!isUsernameEmpty || !isPassEmpty)
             {
 
+                try
+                {
+                    using (SQLiteConnection con = new SQLiteConnection(App.DatabaseLocation))
+                    {
 
+                        User user = con.Table<User>().FirstOrDefault(u => u.Username == username);
+                        if (user != null)
+                        {
+                            if (User.VerifyPassword(password, user.Password))
+                            {
+                                DisplayAlert("Success", "User successfully logged in", "Ok");
+                                Navigation.PushAsync(new HomePage());
+                            }
+                            
+                        }
+                        else
+                        {
+                            DisplayAlert("Login Failed", "Invalid username or password", "Ok");
+                        }
+                    }
+
+                }
+                catch (Exception ex) {
+
+                    DisplayAlert("Error", $"System error: {ex.Message}", "Ok");
+                }
             }
             else
             {
-                Navigation.PushAsync(new HomePage());
+                DisplayAlert("Validation Error", "Please enter username and password", "Ok");
             }
         }
 
