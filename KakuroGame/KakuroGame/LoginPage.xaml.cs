@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using KakuroGame.Model;
 using SQLite;
 using Xamarin.Forms;
+using Xamarin.Essentials;
 
 namespace KakuroGame
 {	
@@ -15,10 +16,11 @@ namespace KakuroGame
 
         void btnLogin_Clicked(System.Object sender, System.EventArgs e)
         {
-            bool isUsernameEmpty = string.IsNullOrEmpty(userNameEntry.Text);
-            bool isPassEmpty = string.IsNullOrEmpty(passwordEntry.Text);
             string username = userNameEntry.Text;
             string password = passwordEntry.Text;
+            bool isUsernameEmpty = string.IsNullOrEmpty(username);
+            bool isPassEmpty = string.IsNullOrEmpty(password);
+            
 
             if (!isUsernameEmpty || !isPassEmpty)
             {
@@ -33,6 +35,9 @@ namespace KakuroGame
                         {
                             if (User.VerifyPassword(password, user.Password))
                             {
+                                //Manager manager = new Manager();
+                                Manager.SaveSesion(user.Username);
+
                                 DisplayAlert("Success", "User successfully logged in", "Ok");
                                 Navigation.PushAsync(new HomePage());
                             }
@@ -65,6 +70,7 @@ namespace KakuroGame
         {
             Navigation.PushAsync(new RegisterPage());
         }
+
     }
 }
 

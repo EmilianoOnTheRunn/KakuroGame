@@ -21,8 +21,8 @@ namespace KakuroGame
             string password = passwordEntry.Text;
             string confirmPassword = confirmPasswordEntry.Text;
 
-            bool isUsernameEmpty = string.IsNullOrEmpty(userNameEntry.Text);
-            bool isPassEmpty = string.IsNullOrEmpty(passwordEntry.Text);
+            bool isUsernameEmpty = string.IsNullOrEmpty(username);
+            bool isPassEmpty = string.IsNullOrEmpty(password);
 
 
             if (!isUsernameEmpty && !isPassEmpty && password == confirmPassword)

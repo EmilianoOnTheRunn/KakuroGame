@@ -26,16 +26,16 @@
                         </Grid.ColumnDefinitions>
 
                          <Image Source="profileL" Style="{StaticResource profileIcon}" />
-                         <Label Text="Username" Style="{StaticResource labelIcon}"  />        
+                         <Label Text="Username" Style="{StaticResource labelIcon}" x:Name="lblUsernameTitle" />        
 
                     </Grid>
                 </StackLayout>
 
                 <StackLayout  Margin="0,100,0,0">
 
-                    <Entry Placeholder="Username" Style="{StaticResource profileEntrys}" />
+                    <Label Text="Username" Style="{StaticResource profileEntrys}" x:Name="lblUsername"/>
                     <BoxView Style="{StaticResource line}"/>
-                    <Entry Placeholder="Password" Style="{StaticResource profileEntrys}" />
+                    <Label  Text="●●●●●●" Style="{StaticResource profileEntrys}" x:Name="lblPassword" FontSize="25"/>
                     <BoxView Style="{StaticResource line}"/>
                     <Button Text="Edit" Clicked="btnEdit_Clicked" x:Name="btnEdit" Style="{StaticResource buttons}"/>
                     <Button Text="Delete account" Clicked="btnDelete_Clicked" x:Name="btnDelete" Style="{StaticResource buttons}" Margin="90,10"/>

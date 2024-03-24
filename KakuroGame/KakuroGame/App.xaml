@@ -55,7 +55,7 @@
                 <Setter Property="HeightRequest" Value="1"/>
                 <Setter Property="HorizontalOptions" Value="FillAndExpand"/>
                 <Setter Property="BackgroundColor" Value="White"/>
-                <Setter Property="Margin" Value="40,0"/> 
+                <Setter Property="Margin" Value="40,20"/> 
             </Style>
 
             <Style TargetType="Button">
@@ -178,11 +178,49 @@
                 <Setter Property="MaxLength" Value="10"/>
             </Style>
 
+            <Style x:Key="Frame3x3" TargetType="Frame">
+                <Setter Property="BackgroundColor" Value="Black"/>
+                <Setter Property="BorderColor" Value="White"/>
+                <Setter Property="Padding" Value="0"/>
+            </Style>
+
+            <Style x:Key="diagonalLine" TargetType="BoxView">
+                <Setter Property="HeightRequest" Value="1"/>
+                <Setter Property="BackgroundColor" Value="White"/>
+                <Setter Property="Rotation" Value="35"/>
+                <Setter Property="HorizontalOptions" Value="FillAndExpand"/>
+                <Setter Property="VerticalOptions" Value="CenterAndExpand"/>
+                <Setter Property="Margin" Value="-10,0,-10,42"/>
+            </Style>
+            <Style x:Key="diagonalLine2" TargetType="BoxView">
+                <Setter Property="HeightRequest" Value="1"/>
+                <Setter Property="BackgroundColor" Value="White"/>
+                <Setter Property="Rotation" Value="35"/>
+                <Setter Property="HorizontalOptions" Value="FillAndExpand"/>
+                <Setter Property="VerticalOptions" Value="CenterAndExpand"/>
+                <Setter Property="Margin" Value="-10,0,-10,42"/>
+            </Style>
+
+            <Style x:Key="Bubble3x3" TargetType="Frame">
+                <Setter Property="BorderColor" Value="Black"/>
+                <Setter Property="HasShadow" Value="True"/>
+                <Setter Property="CornerRadius" Value="20"/>
+                <Setter Property="Padding" Value="10"/>
+                <Setter Property="Background">
+                    <Setter.Value>
+                        <LinearGradientBrush EndPoint="0,2">
+                            <GradientStop Color="Green" Offset="0.0"/>
+                            <GradientStop Color="Blue" Offset="2.0" />
+                        </LinearGradientBrush>
+                    </Setter.Value>
+                </Setter>
+            </Style>
 
             <!--Explicit style: Give name to style pal warning de la prof-->
             <Style x:Key="warningButton" TargetType="Button">
                 <Setter Property="BackgroundColor" Value="Black"/>
                 <Setter Property="TextColor" Value="White"/>
+                <Setter Property="AnchorX" Value="0"/>
             </Style>
 
         </ResourceDictionary>

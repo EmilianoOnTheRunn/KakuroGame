@@ -12,19 +12,114 @@
             <StackLayout>
 
                 <StackLayout  >
-                    <Label Text="CHOOSE YOUR LEVEL" Style="{StaticResource labelIcon}" FontAttributes="Bold" />        
+                    <Label Text="Level Easy" Style="{StaticResource labelIcon}" FontAttributes="Bold" />        
                 </StackLayout>
 
-                <StackLayout  Margin="0,100,0,0">
+                
+                <StackLayout  Margin="0,20,0,0">
+                    <Frame Style="{StaticResource Bubble3x3}">
+                    <StackLayout>
+                    <Grid RowSpacing="0"
+                          ColumnSpacing="0">
+                        <Grid.RowDefinitions>
+                            <RowDefinition />
+                            <RowDefinition />
+                            <RowDefinition />
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition />
+                            <ColumnDefinition />
+                            <ColumnDefinition />
+                        </Grid.ColumnDefinitions>
 
-                    <BoxView Style="{StaticResource line}"/>
-                    <BoxView Style="{StaticResource line}"/>
-                    <BoxView Style="{StaticResource line}"/>
-                    <Label Text="3x3" Style="{StaticResource labelIcon}" />
+                        <Frame Style="{StaticResource Frame3x3}">
+                            <StackLayout>
+                                <BoxView Color="black" ></BoxView> 
+                                <BoxView Style="{StaticResource diagonalLine}"/>
+                                
+                            </StackLayout>
+                        </Frame>
+
+                        <Frame Style="{StaticResource Frame3x3}" Grid.Column="1">
+                             <StackLayout>
+                                <BoxView Style="{StaticResource diagonalLine}" Margin="-10,0,-10,-42"/>
+                                <Label Text="7" Margin="40,0,0,15" TextColor="White"/>
+                            </StackLayout>
+                        </Frame>
+
+                        <Frame Style="{StaticResource Frame3x3}" Grid.Column="2">
+                             <StackLayout>
+                                <BoxView Style="{StaticResource diagonalLine}" Margin="-10,0,-10,-42"/>
+                                <Label Text="4" Margin="40,0,0,15" TextColor="White"/>
+                            </StackLayout>
+                        </Frame>
+
+
+                        <Frame Style="{StaticResource Frame3x3}" Grid.Row="1">
+                             <StackLayout>
+                                <Label Text="8" Margin="80,20,0,0" TextColor="White"/>
+                                <BoxView Style="{StaticResource diagonalLine2}" />
+                            </StackLayout>
+                        </Frame>
+
+                       
+
+                        <Frame Style="{StaticResource Frame3x3}" Grid.Row="1"
+                                 Grid.Column="1">
+                            <StackLayout>
+                                <BoxView Color="black" ></BoxView> 
+                                <Label Text="5" Margin="60,-5,0,0" TextColor="White"/>
+                            </StackLayout>
+                        </Frame>
+
+                        
+
+                         <Frame Style="{StaticResource Frame3x3}" Grid.Row="1"
+                                 Grid.Column="2">
+                            <StackLayout>
+                                <BoxView Color="black"></BoxView> 
+                                <Label Text="3" Margin="60,-5,0,0" TextColor="White"/>
+                            </StackLayout>
+                        </Frame>
+
+                      
+
+                         <Frame Style="{StaticResource Frame3x3}" Grid.Row="2">
+                             <StackLayout>
+                                <Label Text="3" Margin="80,20,0,0" TextColor="White"/>
+                                <BoxView Style="{StaticResource diagonalLine2}" />
+                            </StackLayout>
+                        </Frame>
+
+                        
+
+                        <Frame Style="{StaticResource Frame3x3}" Grid.Row="2" Grid.Column="1">
+                            <StackLayout>
+                                <BoxView Color="black" ></BoxView> 
+                                <Label Text="2" Margin="60,-5,0,0" TextColor="White"/>
+                            </StackLayout>
+                        </Frame>
+
+
+                       
+
+                        <Frame Style="{StaticResource Frame3x3}" Grid.Row="2" Grid.Column="2">
+                            <StackLayout>
+                                <BoxView Color="black" ></BoxView> 
+                                <Label Text="1" Margin="60,-5,0,0" TextColor="White"/>
+                            </StackLayout>
+                        </Frame>
+                       
+                    </Grid>
+                    </StackLayout>
+                    </Frame>
+                    <Label Text="3x3" Style="{StaticResource labelIcon}" Margin="0"/>
                     <Button Text="Done" Style="{StaticResource buttons}" x:Name="btnDone" Clicked="btnDone_Clicked"/>
 
 
                 </StackLayout>
+
+                
 
             </StackLayout>
 

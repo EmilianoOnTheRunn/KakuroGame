@@ -7,9 +7,7 @@ namespace KakuroGame.Model
 {
 	public class User
 	{
-        [PrimaryKey, AutoIncrement]
-        public int Id { get; set; }
-
+        [PrimaryKey]
         [MaxLength(10)]
         public string Username { get; set; }
         [MaxLength(10)]
@@ -45,4 +43,6 @@ namespace KakuroGame.Model
 
 
     }
+
+    
 }

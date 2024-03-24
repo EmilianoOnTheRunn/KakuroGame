@@ -17,12 +17,13 @@ namespace KakuroGame
         {
             using (SQLiteConnection con = new SQLiteConnection(App.DatabaseLocation))
             {
-                bool isUsernameEmpty = string.IsNullOrEmpty(userNameEntry.Text);
-                bool isPassEmpty = string.IsNullOrEmpty(passwordEntry.Text);
                 string username = userNameEntry.Text;
                 string password = passwordEntry.Text;
+                string confirmPassword = confirmPasswordEntry.Text;
+                bool isUsernameEmpty = string.IsNullOrEmpty(username);
+                bool isPassEmpty = string.IsNullOrEmpty(password);
 
-                if (!isUsernameEmpty || !isPassEmpty)
+                if (!isUsernameEmpty && !isPassEmpty && password == confirmPassword)
                 {
 
                     try
@@ -33,8 +34,10 @@ namespace KakuroGame
                             User user1 = con.Table<User>().FirstOrDefault(u => u.Username == username);
                             if (user1 != null)
                             {
-                                con.CreateTable<User>();
-                                int row = con.Update(password);
+                                string hashedPassword = User.HashPassword(password);
+
+                                user1.Password = hashedPassword;
+                                int row = con.Update(user1);
                                 con.Close();
                                 if (row > 0)
                                 {
@@ -49,7 +52,7 @@ namespace KakuroGame
                             }
                             else
                             {
-                                DisplayAlert("Login Failed", "Invalid username or password", "Ok");
+                                DisplayAlert("Failed", "Invalid username", "Ok");
                             }
                         }
 
@@ -62,23 +65,8 @@ namespace KakuroGame
                 }
                 else
                 {
-                    DisplayAlert("Validation Error", "Please enter username and password", "Ok");
+                    DisplayAlert("Validation Error", "Please ensure all fields are filled and passwords match", "Ok");
                 }
-                User user = con.Table<User>().FirstOrDefault(u => u.Username == username);
-                if (user != null)
-                {
-                    if (User.VerifyPassword(password, user.Password))
-                    {
-                        DisplayAlert("Success", "User successfully logged in", "Ok");
-                        Navigation.PushAsync(new HomePage());
-                    }
-
-                }
-                else
-                {
-                    DisplayAlert("Login Failed", "Invalid username or password", "Ok");
-                }
-
 
             }
 

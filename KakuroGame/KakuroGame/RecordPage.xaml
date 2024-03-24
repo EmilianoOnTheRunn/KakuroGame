@@ -13,7 +13,7 @@
                 
 
                 <StackLayout  >
-                    <Label Text="Your Record" Style="{StaticResource labelIcon}" FontAttributes="Bold" />        
+                    <Label Text="Your Record" Style="{StaticResource labelIcon}" FontAttributes="Bold" x:Name="usernameTitle"/>        
                 </StackLayout>
 
                 <Frame Style="{StaticResource BubbleRecord}">
