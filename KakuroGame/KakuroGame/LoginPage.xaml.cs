@@ -35,7 +35,6 @@ namespace KakuroGame
                         {
                             if (User.VerifyPassword(password, user.Password))
                             {
-                                //Manager manager = new Manager();
                                 Manager.SaveSesion(user.Username);
 
                                 DisplayAlert("Success", "User successfully logged in", "Ok");

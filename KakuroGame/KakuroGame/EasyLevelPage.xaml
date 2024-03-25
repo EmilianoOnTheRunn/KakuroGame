@@ -68,7 +68,7 @@
                                  Grid.Column="1">
                             <StackLayout>
                                 <BoxView Color="black" ></BoxView> 
-                                <Label Text="5" Margin="60,-5,0,0" TextColor="White"/>
+                                <Label Text="5" Margin="55,-10,0,0" TextColor="White"/>
                             </StackLayout>
                         </Frame>
 
@@ -78,7 +78,7 @@
                                  Grid.Column="2">
                             <StackLayout>
                                 <BoxView Color="black"></BoxView> 
-                                <Label Text="3" Margin="60,-5,0,0" TextColor="White"/>
+                                <Label Text="3" Margin="55,-10,0,0" TextColor="White"/>
                             </StackLayout>
                         </Frame>
 
@@ -96,7 +96,7 @@
                         <Frame Style="{StaticResource Frame3x3}" Grid.Row="2" Grid.Column="1">
                             <StackLayout>
                                 <BoxView Color="black" ></BoxView> 
-                                <Label Text="2" Margin="60,-5,0,0" TextColor="White"/>
+                                <Label Text="2" Margin="55,-10,0,0" TextColor="White"/>
                             </StackLayout>
                         </Frame>
 
@@ -106,14 +106,17 @@
                         <Frame Style="{StaticResource Frame3x3}" Grid.Row="2" Grid.Column="2">
                             <StackLayout>
                                 <BoxView Color="black" ></BoxView> 
-                                <Label Text="1" Margin="60,-5,0,0" TextColor="White"/>
+                                <Label Text="1" Margin="55,-10,0,0" TextColor="White"/>
                             </StackLayout>
                         </Frame>
                        
                     </Grid>
                     </StackLayout>
-                    </Frame>
-                    <Label Text="3x3" Style="{StaticResource labelIcon}" Margin="0"/>
+                    </Frame> 
+                    <StackLayout Orientation="Horizontal">
+                        <Label Text="3x3" Style="{StaticResource labelIcon}" HorizontalOptions="Start" Margin="10"/>
+                        <Label Text="0:12" Style="{StaticResource labelIcon}" HorizontalOptions="EndAndExpand" Margin="10"/>
+                    </StackLayout>
                     <Button Text="Done" Style="{StaticResource buttons}" x:Name="btnDone" Clicked="btnDone_Clicked"/>
 
 
