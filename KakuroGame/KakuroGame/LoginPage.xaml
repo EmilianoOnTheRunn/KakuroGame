@@ -1,0 +1,62 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<ContentPage
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="KakuroGame.LoginPage"
+    NavigationPage.HasNavigationBar="False">
+
+    <StackLayout>
+
+        <Frame Style="{StaticResource Background}">
+
+            <StackLayout Margin="0,0,0,0">
+
+                <StackLayout  Margin="0,40,104,0">
+
+                    <Frame Style="{StaticResource Bubble1}">  
+                        <Label Text="Welcome to the Kakuro Game"  Style="{StaticResource Titles}"/>
+                    </Frame>
+
+                </StackLayout>
+                
+                <StackLayout Margin="0,100,0,0">
+                    <Label Style="{StaticResource Titles}" FontSize="29" HorizontalTextAlignment="Center">
+                        <Label.FormattedText>
+                            <FormattedString>
+                                <Span Text="Please enter your information" />
+                                <Span Text=" "/>
+                                <Span Text="below" />
+                            </FormattedString>
+                        </Label.FormattedText>
+                    </Label>        
+                </StackLayout>
+
+                <StackLayout VerticalOptions="Center" Margin="0,100,0,0">
+
+                    <Frame Style="{StaticResource Bubble2}">  
+                        <Entry Placeholder="Username" Style="{StaticResource Inputs}" x:Name="userNameEntry"/>
+                    </Frame>
+
+                    <Frame Style="{StaticResource Bubble2}">  
+                        <Entry IsPassword="True" Placeholder="Password" Style="{StaticResource Inputs}" x:Name="passwordEntry"/>
+                    </Frame>
+
+                    <Button Text="Login" Style="{StaticResource btnLogin}" Clicked="btnLogin_Clicked" x:Name="btnLogin"/>
+                    <Button Text="Forgot Password?" Clicked="btnForgotPassword_Clicked" x:Name="btnForgotPassword"/>
+                    <Button Text="Don’t have an Account? Sign Up" Clicked="btnSignIn_Clicked" Margin="0,100,0,0" x:Name="btnSignIn"/>
+                </StackLayout>
+            
+
+            </StackLayout>
+
+        </Frame>
+
+        
+
+    </StackLayout>
+          
+
+     
+
+</ContentPage>
+

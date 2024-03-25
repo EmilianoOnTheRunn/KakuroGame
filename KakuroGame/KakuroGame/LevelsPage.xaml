@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<ContentPage
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="KakuroGame.LevelsPage">
+
+     <StackLayout>
+
+        <Frame Style="{StaticResource Background}">
+
+            <StackLayout>
+
+                <StackLayout  >
+                    <Label Text="CHOOSE YOUR LEVEL" Style="{StaticResource labelIcon}" FontAttributes="Bold" />        
+                </StackLayout>
+
+                <StackLayout  Margin="0,100,0,0">
+
+                    <Button Text="Easy" Style="{StaticResource profileEntrys}" Clicked="btnEasy_Clicked" x:Name="btnEasy"/>
+                    <BoxView Style="{StaticResource line}"/>
+                    <Button Text="Medium" Style="{StaticResource profileEntrys}" Clicked="btnMedium_Clicked" x:Name="btnMedium"/>
+                    <BoxView Style="{StaticResource line}"/>
+                    <Button Text="Hard" Style="{StaticResource profileEntrys}" Clicked="btnHard_Clicked" x:Name="btnHard"/>
+                    <BoxView Style="{StaticResource line}"/>
+
+
+                </StackLayout>
+
+            </StackLayout>
+
+
+            
+        </Frame>
+
+    </StackLayout>
+
+</ContentPage>
+
