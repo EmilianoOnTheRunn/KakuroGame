@@ -4,6 +4,7 @@ using KakuroGame.Model;
 using SQLite;
 using Xamarin.Forms;
 using Xamarin.Essentials;
+using Xamarin.Forms.PlatformConfiguration;
 
 namespace KakuroGame
 {	
@@ -22,7 +23,7 @@ namespace KakuroGame
             bool isPassEmpty = string.IsNullOrEmpty(password);
             
 
-            if (!isUsernameEmpty || !isPassEmpty)
+            if (!isUsernameEmpty && !isPassEmpty)
             {
 
                 try
@@ -35,12 +36,16 @@ namespace KakuroGame
                         {
                             if (User.VerifyPassword(password, user.Password))
                             {
-                                Manager.SaveSesion(user.Username);
+                               Manager.SaveSesion(user.Username);
 
                                 DisplayAlert("Success", "User successfully logged in", "Ok");
                                 Navigation.PushAsync(new HomePage());
                             }
-                            
+                            else
+                            {
+                                DisplayAlert("Login Failed", "Invalid password", "Ok");
+                            }
+
                         }
                         else
                         {
@@ -70,6 +75,7 @@ namespace KakuroGame
             Navigation.PushAsync(new RegisterPage());
         }
 
+        
     }
 }
 

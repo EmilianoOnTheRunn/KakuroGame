@@ -2,8 +2,7 @@
 <ContentPage
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-    x:Class="KakuroGame.EasyLevelPage"
-    NavigationPage.HasNavigationBar="False">
+    x:Class="KakuroGame.EasyLevelPage">
 
  <StackLayout>
 
@@ -12,7 +11,7 @@
             <StackLayout>
 
                 <StackLayout  >
-                    <Label Text="Level Easy" Style="{StaticResource labelIcon}" FontAttributes="Bold" />        
+                    <Label Text="Easy Level" Style="{StaticResource labelIcon}" FontAttributes="Bold" Margin="0,60,0,0"/>        
                 </StackLayout>
 
                 
@@ -32,84 +31,78 @@
                             <ColumnDefinition />
                         </Grid.ColumnDefinitions>
 
-                        <Frame Style="{StaticResource Frame3x3}">
+
+                        <!--Grid Row 0-->
+
+                        <Frame Style="{StaticResource FrameGame}">
                             <StackLayout>
-                                <BoxView Color="black" ></BoxView> 
-                                <BoxView Style="{StaticResource diagonalLine}"/>
-                                
+                                <BoxView Style="{StaticResource diagonalLineBased}"/>                                
                             </StackLayout>
                         </Frame>
 
-                        <Frame Style="{StaticResource Frame3x3}" Grid.Column="1">
+                        <Frame Style="{StaticResource FrameGame}" Grid.Column="1">
                              <StackLayout>
-                                <BoxView Style="{StaticResource diagonalLine}" Margin="-10,0,-10,-42"/>
-                                <Label Text="7" Margin="40,0,0,15" TextColor="White"/>
+                                <BoxView Style="{StaticResource diagonalLineTop3x3}"/>
+                                <Label Text="7" Margin="40,0,0,20" TextColor="White"/>
                             </StackLayout>
                         </Frame>
 
-                        <Frame Style="{StaticResource Frame3x3}" Grid.Column="2">
+                        <Frame Style="{StaticResource FrameGame}" Grid.Column="2">
                              <StackLayout>
-                                <BoxView Style="{StaticResource diagonalLine}" Margin="-10,0,-10,-42"/>
-                                <Label Text="4" Margin="40,0,0,15" TextColor="White"/>
+                                <BoxView Style="{StaticResource diagonalLineTop3x3}"/>
+                                <Label Text="4" Margin="40,0,0,20" TextColor="White"/>
                             </StackLayout>
                         </Frame>
 
 
-                        <Frame Style="{StaticResource Frame3x3}" Grid.Row="1">
+
+                        <!--Grid Row 1-->
+
+                        <Frame Style="{StaticResource FrameGame}" Grid.Row="1">
                              <StackLayout>
-                                <Label Text="8" Margin="80,20,0,0" TextColor="White"/>
-                                <BoxView Style="{StaticResource diagonalLine2}" />
+                                <Label Text="8" Margin="80,30,0,0" TextColor="White"/>
+                                <BoxView Style="{StaticResource diagonalLineLeft3x3}" />
                             </StackLayout>
                         </Frame>
 
-                       
-
-                        <Frame Style="{StaticResource Frame3x3}" Grid.Row="1"
+                        <Frame Style="{StaticResource FrameGame}" Grid.Row="1"
                                  Grid.Column="1">
                             <StackLayout>
-                                <BoxView Color="black" ></BoxView> 
-                                <Label Text="5" Margin="55,-10,0,0" TextColor="White"/>
+                                <Entry Placeholder="5" Style="{StaticResource Input3x3}"/>
                             </StackLayout>
                         </Frame>
 
-                        
 
-                         <Frame Style="{StaticResource Frame3x3}" Grid.Row="1"
+                        <Frame Style="{StaticResource FrameGame}" Grid.Row="1"
                                  Grid.Column="2">
                             <StackLayout>
-                                <BoxView Color="black"></BoxView> 
-                                <Label Text="3" Margin="55,-10,0,0" TextColor="White"/>
+                                <Entry Text="3" Style="{StaticResource Input3x3}"/>
                             </StackLayout>
                         </Frame>
 
                       
+                        <!--Grid Row 2-->
 
-                         <Frame Style="{StaticResource Frame3x3}" Grid.Row="2">
+                        <Frame Style="{StaticResource FrameGame}" Grid.Row="2">
                              <StackLayout>
-                                <Label Text="3" Margin="80,20,0,0" TextColor="White"/>
-                                <BoxView Style="{StaticResource diagonalLine2}" />
+                                <Label Text="3" Margin="80,30,0,0" TextColor="White"/>
+                                <BoxView Style="{StaticResource diagonalLineLeft3x3}" />
                             </StackLayout>
                         </Frame>
 
-                        
-
-                        <Frame Style="{StaticResource Frame3x3}" Grid.Row="2" Grid.Column="1">
+                        <Frame Style="{StaticResource FrameGame}" Grid.Row="2" Grid.Column="1">
                             <StackLayout>
-                                <BoxView Color="black" ></BoxView> 
-                                <Label Text="2" Margin="55,-10,0,0" TextColor="White"/>
+                                <Entry Text="2" Style="{StaticResource Input3x3}"/>
                             </StackLayout>
-                        </Frame>
+                        </Frame>                    
 
-
-                       
-
-                        <Frame Style="{StaticResource Frame3x3}" Grid.Row="2" Grid.Column="2">
+                        <Frame Style="{StaticResource FrameGame}" Grid.Row="2" Grid.Column="2">
                             <StackLayout>
-                                <BoxView Color="black" ></BoxView> 
-                                <Label Text="1" Margin="55,-10,0,0" TextColor="White"/>
+                                <Entry Text="1" Style="{StaticResource Input3x3}"/>
                             </StackLayout>
                         </Frame>
-                       
+
+             
                     </Grid>
                     </StackLayout>
                     </Frame> 

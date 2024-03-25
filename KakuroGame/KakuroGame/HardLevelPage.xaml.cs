@@ -11,6 +11,10 @@ namespace KakuroGame
 		{
 			InitializeComponent ();
 		}
-	}
+
+        void btnDone_Clicked(System.Object sender, System.EventArgs e)
+        {
+        }
+    }
 }
 

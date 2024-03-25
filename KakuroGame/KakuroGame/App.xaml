@@ -8,7 +8,15 @@
             <Color x:Key="myFavColor">#fffff</Color>
             <Color x:Key="darkPink">#ff0088</Color>
             <Color x:Key="WhiteColor">#ffffff</Color>
-            
+
+
+            <Style TargetType="NavigationPage">
+                <Setter Property="BarBackgroundColor" Value="Black"/>
+                <Setter Property="BarTextColor" Value="White"/>
+            </Style>
+
+
+
             <Style x:Key="tabbar" TargetType="TabbedPage">
                 <Setter Property="BarBackgroundColor" Value="DimGray"/>
                 <Setter Property="BarTextColor" Value="White"/>
@@ -107,7 +115,6 @@
             </Style>
 
             <Style x:Key="Background" TargetType="Frame">
-                <Setter Property="BorderColor" Value="LightGray"/>
                 <Setter Property="HasShadow" Value="True"/>
                 <Setter Property="CornerRadius" Value="0"/>
                 <Setter Property="VerticalOptions" Value="FillAndExpand"/>
@@ -178,27 +185,92 @@
                 <Setter Property="MaxLength" Value="10"/>
             </Style>
 
-            <Style x:Key="Frame3x3" TargetType="Frame">
+            <Style x:Key="Input3x3" TargetType="Entry">
+                <Setter Property="TextColor" Value="White" />
+                <Setter Property="PlaceholderColor" Value="White"/>
+                <Setter Property="BackgroundColor" Value="Transparent"/>
+                <Setter Property="Margin" Value="50"/>
+                <Setter Property="MaxLength" Value="1"/>
+                <Setter Property="Keyboard" Value="Numeric"/>
+            </Style>
+
+            <Style x:Key="Input4x4" TargetType="Entry">
+                <Setter Property="TextColor" Value="White" />
+                <Setter Property="PlaceholderColor" Value="White"/>
+                <Setter Property="BackgroundColor" Value="Transparent"/>
+                <Setter Property="Margin" Value="34"/>
+                <Setter Property="MaxLength" Value="1"/>
+                <Setter Property="Keyboard" Value="Numeric"/>
+            </Style>
+
+            <Style x:Key="Input5x5" TargetType="Entry">
+                <Setter Property="TextColor" Value="White" />
+                <Setter Property="PlaceholderColor" Value="White"/>
+                <Setter Property="BackgroundColor" Value="Transparent"/>
+                <Setter Property="Margin" Value="27"/>
+                <Setter Property="MaxLength" Value="1"/>
+                <Setter Property="Keyboard" Value="Numeric"/>
+            </Style>
+
+            <Style x:Key="FrameGame" TargetType="Frame">
                 <Setter Property="BackgroundColor" Value="Black"/>
                 <Setter Property="BorderColor" Value="White"/>
                 <Setter Property="Padding" Value="0"/>
             </Style>
 
-            <Style x:Key="diagonalLine" TargetType="BoxView">
+
+            <Style x:Key="diagonalLineBased" TargetType="BoxView">
                 <Setter Property="HeightRequest" Value="1"/>
                 <Setter Property="BackgroundColor" Value="White"/>
-                <Setter Property="Rotation" Value="35"/>
+                <Setter Property="Rotation" Value="46"/>
                 <Setter Property="HorizontalOptions" Value="FillAndExpand"/>
                 <Setter Property="VerticalOptions" Value="CenterAndExpand"/>
-                <Setter Property="Margin" Value="-10,0,-10,42"/>
+                <Setter Property="Margin" Value="-20,5,-20,0"/>
             </Style>
+
+            <Style x:Key="diagonalLineTop3x3" TargetType="BoxView">
+                <Setter Property="HeightRequest" Value="1"/>
+                <Setter Property="BackgroundColor" Value="White"/>
+                <Setter Property="Rotation" Value="46"/>
+                <Setter Property="HorizontalOptions" Value="FillAndExpand"/>
+                <Setter Property="VerticalOptions" Value="CenterAndExpand"/>
+                <Setter Property="Margin" Value="-20,45,-20,0"/>
+            </Style>
+
+            <Style x:Key="diagonalLineLeft3x3" TargetType="BoxView">
+                <Setter Property="HeightRequest" Value="1"/>
+                <Setter Property="BackgroundColor" Value="White"/>
+                <Setter Property="Rotation" Value="46"/>
+                <Setter Property="HorizontalOptions" Value="FillAndExpand"/>
+                <Setter Property="VerticalOptions" Value="CenterAndExpand"/>
+                <Setter Property="Margin" Value="-20,-50,-20,0"/>
+            </Style>
+
             <Style x:Key="diagonalLine2" TargetType="BoxView">
                 <Setter Property="HeightRequest" Value="1"/>
                 <Setter Property="BackgroundColor" Value="White"/>
-                <Setter Property="Rotation" Value="35"/>
+                <Setter Property="Rotation" Value="47"/>
                 <Setter Property="HorizontalOptions" Value="FillAndExpand"/>
                 <Setter Property="VerticalOptions" Value="CenterAndExpand"/>
-                <Setter Property="Margin" Value="-10,0,-10,42"/>
+                <Setter Property="Margin" Value="-15,0,-22,42"/>
+            </Style>
+
+            <Style x:Key="diagonalLine4x4Top" TargetType="BoxView">
+                <Setter Property="HeightRequest" Value="1"/>
+                <Setter Property="BackgroundColor" Value="White"/>
+                <Setter Property="Rotation" Value="46"/>
+                <Setter Property="HorizontalOptions" Value="FillAndExpand"/>
+                <Setter Property="VerticalOptions" Value="CenterAndExpand"/>
+                <Setter Property="Margin" Value="-15,0,-20,-42"/>
+            </Style>
+
+            <Style x:Key="diagonalLine5x5Top" TargetType="BoxView">
+                <Setter Property="HeightRequest" Value="1"/>
+                <Setter Property="BackgroundColor" Value="White"/>
+                <Setter Property="Rotation" Value="48"/>
+                <Setter Property="HorizontalOptions" Value="FillAndExpand"/>
+                <Setter Property="VerticalOptions" Value="CenterAndExpand"/>
+                <Setter Property="Margin" Value="-13,0,-12,-42"/>
             </Style>
 
             <Style x:Key="Bubble3x3" TargetType="Frame">
@@ -210,7 +282,37 @@
                     <Setter.Value>
                         <LinearGradientBrush EndPoint="0,2">
                             <GradientStop Color="Green" Offset="0.0"/>
-                            <GradientStop Color="Blue" Offset="2.0" />
+                            <GradientStop Color="Blue" Offset="1.0" />
+                        </LinearGradientBrush>
+                    </Setter.Value>
+                </Setter>
+            </Style>
+
+            <Style x:Key="Bubble4x4" TargetType="Frame">
+                <Setter Property="BorderColor" Value="Black"/>
+                <Setter Property="HasShadow" Value="True"/>
+                <Setter Property="CornerRadius" Value="20"/>
+                <Setter Property="Padding" Value="10"/>
+                <Setter Property="Background">
+                    <Setter.Value>
+                        <LinearGradientBrush EndPoint="0,1">
+                            <GradientStop Color="LightGreen" Offset="0.0"/>
+                            <GradientStop Color="Yellow" Offset="1.0" />
+                        </LinearGradientBrush>
+                    </Setter.Value>
+                </Setter>
+            </Style>
+
+            <Style x:Key="Bubble5x5" TargetType="Frame">
+                <Setter Property="BorderColor" Value="Black"/>
+                <Setter Property="HasShadow" Value="True"/>
+                <Setter Property="CornerRadius" Value="20"/>
+                <Setter Property="Padding" Value="10"/>
+                <Setter Property="Background">
+                    <Setter.Value>
+                        <LinearGradientBrush EndPoint="0,1">
+                            <GradientStop Color="Yellow" Offset="0.0"/>
+                            <GradientStop Color="Red" Offset="1.0" />
                         </LinearGradientBrush>
                     </Setter.Value>
                 </Setter>

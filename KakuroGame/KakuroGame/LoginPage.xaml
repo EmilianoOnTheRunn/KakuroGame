@@ -37,9 +37,9 @@
                         <Entry Placeholder="Username" Style="{StaticResource Inputs}" x:Name="userNameEntry"/>
                     </Frame>
 
-                    <Frame Style="{StaticResource Bubble2}">  
-                        <Entry IsPassword="True" Placeholder="Password" Style="{StaticResource Inputs}" x:Name="passwordEntry"/>
-                    </Frame>
+                        <Frame Style="{StaticResource Bubble2}">  
+                            <Entry IsPassword="True" Placeholder="Password" Style="{StaticResource Inputs}" x:Name="passwordEntry"/>
+                        </Frame>
 
                     <Button Text="Login" Style="{StaticResource btnLogin}" Clicked="btnLogin_Clicked" x:Name="btnLogin"/>
                     <Button Text="Forgot Password?" Clicked="btnForgotPassword_Clicked" x:Name="btnForgotPassword"/>

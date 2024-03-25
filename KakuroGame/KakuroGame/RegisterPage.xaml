@@ -2,8 +2,7 @@
 <ContentPage
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-    x:Class="KakuroGame.RegisterPage"
-    NavigationPage.HasNavigationBar="False">
+    x:Class="KakuroGame.RegisterPage">
 
 
     <StackLayout>
@@ -13,7 +12,7 @@
             <StackLayout VerticalOptions="CenterAndExpand">
 
                 
-                <StackLayout Margin="0,100,0,0">
+                <StackLayout>
                     <Label Style="{StaticResource Titles}" FontSize="29" HorizontalTextAlignment="Center">
                         <Label.FormattedText>
                             <FormattedString>
@@ -38,7 +37,6 @@
                     <Frame Style="{StaticResource Bubble2}" >  
                         <Entry Placeholder="Confirm Password" Style="{StaticResource Inputs}" x:Name="confirmPasswordEntry"/>
                     </Frame>
-
                     <Button Text="Sign In" Style="{StaticResource btnLogin}" Clicked="signIn_Clicked" x:Name="signIn"/>
 
                 </StackLayout>
