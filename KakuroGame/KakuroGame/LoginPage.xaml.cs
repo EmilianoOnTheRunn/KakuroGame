@@ -28,34 +28,22 @@ namespace KakuroGame
 
                 try
                 {
-                    using (SQLiteConnection con = new SQLiteConnection(App.DatabaseLocation))
-                    {
+                    var user = UserDBManager.RequestUser(username, password);
+                    if (user != null) { 
+                    
+                        SessionManager.SaveSesion(user.Username);
 
-                        User user = con.Table<User>().FirstOrDefault(u => u.Username == username);
-                        if (user != null)
-                        {
-                            if (User.VerifyPassword(password, user.Password))
-                            {
-                               Manager.SaveSesion(user.Username);
-
-                                DisplayAlert("Success", "User successfully logged in", "Ok");
-                                Navigation.PushAsync(new HomePage());
-                            }
-                            else
-                            {
-                                DisplayAlert("Login Failed", "Invalid password", "Ok");
-                            }
-
-                        }
-                        else
-                        {
-                            DisplayAlert("Login Failed", "Invalid username or password", "Ok");
-                        }
+                        DisplayAlert("Success", "User successfully logged in", "Ok");
+                        Navigation.PushAsync(new HomePage());
                     }
-
+                    else
+                    {
+                        DisplayAlert("Login Failed", "Invalid username or password", "Ok");
+                    }
                 }
-                catch (Exception ex) {
 
+                catch (Exception ex)
+                {
                     DisplayAlert("Error", $"System error: {ex.Message}", "Ok");
                 }
             }

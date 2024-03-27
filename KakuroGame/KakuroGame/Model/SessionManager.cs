@@ -2,7 +2,7 @@
 using Xamarin.Essentials;
 namespace KakuroGame.Model
 {
-	public static class Manager
+	public static class SessionManager
 	{
 		private const string SessionKey = "1234567890";
 

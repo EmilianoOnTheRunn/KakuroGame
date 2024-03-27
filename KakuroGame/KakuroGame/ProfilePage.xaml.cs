@@ -10,7 +10,7 @@ namespace KakuroGame
 {	
 	public partial class ProfilePage : ContentPage
 	{
-        string username = Manager.GetSession();
+        string username = SessionManager.GetSession();
         public ProfilePage ()
 		{
 			InitializeComponent ();
