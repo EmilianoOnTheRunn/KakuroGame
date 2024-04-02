@@ -23,24 +23,23 @@ namespace KakuroGame
             Navigation.PushAsync(new PasswordPage());
         }
 
-        void btnDelete_Clicked(System.Object sender, System.EventArgs e)
+        async void btnDelete_Clicked(System.Object sender, System.EventArgs e)
         {
+
+            bool response = await DisplayAlert("Caution!", "Are you sure that you want to delete your account","Yes", "No");
             
-            using (SQLiteConnection con = new SQLiteConnection(App.DatabaseLocation))
+            if (response)
             {
-                User user = con.Table<User>().FirstOrDefault(u => u.Username == username);
-                //lblPassword.Text = user.Password;
-                con.CreateTable<User>();
-                int row = con.Delete(user);
-                con.Close();
-                if (row > 0)
+                try
                 {
-                    DisplayAlert("Success", "User deleted", "Ok");
+                    UserDBManager.RequestDeleteUser(username);
+                    await DisplayAlert("Success", "User deleted", "Ok");
                     Navigation.PopAsync();
                 }
-                else
+                catch (Exception ex)
                 {
-                    DisplayAlert("Failed", "Check again", "Ok");
+                    await DisplayAlert("Error", "There's was an error deleting the user: " + ex, "Ok");
+                    Navigation.PopAsync();
                 }
             }
 
@@ -48,7 +47,8 @@ namespace KakuroGame
 
         void btnSignOut_Clicked(System.Object sender, System.EventArgs e)
         {
-            Navigation.PushAsync(new LoginPage());
+            SessionManager.RemoveSession();
+            Navigation.PopAsync();
         }
     }
 }

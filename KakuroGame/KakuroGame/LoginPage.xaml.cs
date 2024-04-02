@@ -34,6 +34,8 @@ namespace KakuroGame
                         SessionManager.SaveSesion(user.Username);
 
                         DisplayAlert("Success", "User successfully logged in", "Ok");
+                        userNameEntry.Text = "";
+                        passwordEntry.Text = "";
                         Navigation.PushAsync(new HomePage());
                     }
                     else
