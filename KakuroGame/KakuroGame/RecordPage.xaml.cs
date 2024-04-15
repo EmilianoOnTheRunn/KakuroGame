@@ -14,18 +14,6 @@ namespace KakuroGame
 			InitializeComponent ();
 
 		}
-        List<Record> listRecords = new List<Record>
-        {
-            new Record(new Clock(), new Kakuro(Enums.EDifficulty.Easy), "user1"),
-            new Record(new Clock(), new Kakuro(Enums.EDifficulty.Medium), "user2"),
-            new Record(new Clock(), new Kakuro(Enums.EDifficulty.Hard), "user3")
-        };
-
-        //protected override void OnAppearing()
-        //{
-        //    base.OnAppearing();
-        //    recordListView.ItemsSource = listRecords;
-        //}
 
         protected override void OnAppearing()
         {
@@ -34,7 +22,7 @@ namespace KakuroGame
             {
                 con.CreateTable<Record>();
                 var records = con.Table<Record>().ToList();
-                recordListView.ItemsSource = records;
+                recordListView.ItemsSource = records.Where(s => s.Username == SessionManager.GetSession());
             }
         }
 

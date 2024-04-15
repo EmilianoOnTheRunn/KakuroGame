@@ -1,4 +1,5 @@
 ﻿using System;
+using KakuroGame.Enums;
 using SQLite;
 
 namespace KakuroGame.Model
@@ -13,7 +14,9 @@ namespace KakuroGame.Model
         {
             using (SQLiteConnection con = new SQLiteConnection(App.DatabaseLocation))
             {
+                con.DropTable<Record>();
                 con.CreateTable<Record>();
+
                 int rowsAffected = con.Insert(record);
                 if (rowsAffected > 0)
                 {
@@ -28,14 +31,14 @@ namespace KakuroGame.Model
         }
 
 
-        public static bool Add(Clock time)
+        public static bool Add(DateTime time)
         {
             Game game = Game.GetInstance();
             var kakuro = game.kakuro;
 
             var user = SessionManager.GetSession();
 
-            Record record = new Record(time, kakuro, user);
+            Record record = new Record(time, kakuro.Difficulty, user);
             return SaveRecord(record);
         }
 
