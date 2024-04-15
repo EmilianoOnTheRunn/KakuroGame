@@ -135,19 +135,19 @@
 
                         <Frame Style="{StaticResource FrameGame}" Grid.Row="3" Grid.Column="1">
                             <StackLayout>
-                                <Entry Placeholder="6" Style="{StaticResource Input4x4}" x:Name="lblx3y1" local:ValidateCells.RowId="2" local:ValidateCells.ColumnId="3" PropertyChanged="lblx1y1_PropertyChanged_1"/>
+                                <Entry Placeholder="6" Style="{StaticResource Input4x4}" x:Name="lblx3y1" local:ValidateCells.RowId="3" local:ValidateCells.ColumnId="1" PropertyChanged="lblx1y1_PropertyChanged_1"/>
                             </StackLayout>
                         </Frame>
                         
                         <Frame Style="{StaticResource FrameGame}" Grid.Row="3" Grid.Column="2">
                             <StackLayout>
-                                <Entry Placeholder="1" Style="{StaticResource Input4x4}" x:Name="lblx3y2" local:ValidateCells.RowId="2" local:ValidateCells.ColumnId="3" PropertyChanged="lblx1y1_PropertyChanged_1"/>
+                                <Entry Placeholder="1" Style="{StaticResource Input4x4}" x:Name="lblx3y2" local:ValidateCells.RowId="2" local:ValidateCells.ColumnId="2" PropertyChanged="lblx1y1_PropertyChanged_1"/>
                             </StackLayout>
                         </Frame>
                         
                         <Frame Style="{StaticResource FrameGame}" Grid.Row="3" Grid.Column="3">
                             <StackLayout>
-                                <Entry Placeholder="3" Style="{StaticResource Input4x4}" x:Name="lblx3y3" local:ValidateCells.RowId="2" local:ValidateCells.ColumnId="3" PropertyChanged="lblx1y1_PropertyChanged_1"/>
+                                <Entry Placeholder="3" Style="{StaticResource Input4x4}" x:Name="lblx3y3" local:ValidateCells.RowId="3" local:ValidateCells.ColumnId="3" PropertyChanged="lblx1y1_PropertyChanged_1"/>
                             </StackLayout>
                         </Frame>
 
