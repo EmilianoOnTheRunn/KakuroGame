@@ -14,7 +14,40 @@ namespace KakuroGame
 		{
 			InitializeComponent ();
 			BindingContext = new Clock();
-		}
+
+            //int[,] kakuroValues = new int[,]
+            //{
+            //    { 0, 7, 4 },
+            //    { 8, 0, 0 },
+            //    { 3, 2, 1 }
+            //};
+
+            //for (int row = 0; row < kakuroValues.GetLength(0); row++)
+            //{
+            //    for (int col = 0; col < kakuroValues.GetLength(1); col++)
+            //    {
+            //        Frame frame = new Frame
+            //        {
+            //            Style = (Style)Application.Current.Resources["FrameGame"],
+            //            Content = new StackLayout
+            //            {
+            //                Children =
+            //    {
+            //        new Label
+            //        {
+            //            Text = kakuroValues[row, col].ToString(),
+            //            Margin = new Thickness(50, 0, 0, 20),
+            //            TextColor = Color.White
+            //        }
+            //    }
+            //            }
+            //        };
+
+            //        KakuroGrid.Children.Add(frame, col, row);
+            //    }
+            //}
+
+        }
 
         void btnDone_Clicked(System.Object sender, System.EventArgs e)
         {

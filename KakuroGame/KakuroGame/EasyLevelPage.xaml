@@ -19,7 +19,7 @@
                     <Frame Style="{StaticResource Bubble3x3}">
                     <StackLayout>
                     <Grid RowSpacing="0"
-                          ColumnSpacing="0">
+                          ColumnSpacing="0" x:Name="KakuroGrid">
                         <Grid.RowDefinitions>
                             <RowDefinition />
                             <RowDefinition />
