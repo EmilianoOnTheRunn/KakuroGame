@@ -28,7 +28,16 @@ namespace KakuroGame.Model
         }
 
 
+        public static bool Add(Clock time)
+        {
+            Game game = Game.GetInstance();
+            var kakuro = game.kakuro;
 
+            var user = SessionManager.GetSession();
+
+            Record record = new Record(time, kakuro, user);
+            return SaveRecord(record);
+        }
 
     }
 }

@@ -76,6 +76,11 @@ namespace KakuroGame.Model
                 }
             }
 
+            if (startedCount && currentSum != expectedTotal)
+            {
+                return false;
+            }
+
             expectedTotal = -1;
             startedCount = false;
             currentSum = 0;
@@ -109,6 +114,11 @@ namespace KakuroGame.Model
                         currentSum += cell.value;
                     }
                 }
+            }
+
+            if (startedCount && currentSum != expectedTotal)
+            {
+                return false;
             }
 
             return true;
