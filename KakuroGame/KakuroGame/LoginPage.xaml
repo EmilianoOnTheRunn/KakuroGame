@@ -14,10 +14,11 @@
                 <StackLayout  Margin="0,40,104,0">
 
                     <Frame Style="{StaticResource Bubble1}">  
-                        <Label Text="Welcome to the Kakuro Game"  Style="{StaticResource Titles}"/>
+                        <Label Text="Welcome to Kakuro Kingdom"  Style="{StaticResource Titles}"/>
                     </Frame>
 
                 </StackLayout>
+                
                 
                 <StackLayout Margin="0,100,0,0">
                     <Label Style="{StaticResource Titles}" FontSize="29" HorizontalTextAlignment="Center">

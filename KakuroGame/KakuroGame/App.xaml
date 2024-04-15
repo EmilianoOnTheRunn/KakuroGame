@@ -72,6 +72,50 @@
                 <Setter Property="FontAttributes" Value="Bold"/>
             </Style>
 
+            <Style x:Key="btnNumbers3x3" TargetType="Button">
+                <Setter Property="TextColor" Value="Black"/>
+                <Setter Property="CornerRadius" Value="10"/>
+                <Setter Property="FontAttributes" Value="Bold"/>
+                <Setter Property="FontSize" Value="20"/>
+                <Setter Property="Background">
+                    <Setter.Value>
+                        <LinearGradientBrush EndPoint="0,0" x:Name="brush">
+                            <GradientStop Color="Blue" Offset="0.1"/>
+                            <GradientStop Color="Green" Offset="1.0" />
+                        </LinearGradientBrush>
+                    </Setter.Value>
+                </Setter>
+            </Style>
+            <Style x:Key="btnNumbers4x4" TargetType="Button">
+                <Setter Property="TextColor" Value="Black"/>
+                <Setter Property="CornerRadius" Value="10"/>
+                <Setter Property="FontAttributes" Value="Bold"/>
+                <Setter Property="FontSize" Value="20"/>
+                <Setter Property="Background">
+                    <Setter.Value>
+                        <LinearGradientBrush EndPoint="0,0" x:Name="brush">
+                            <GradientStop Color="LightGreen" Offset="0.1"/>
+                            <GradientStop Color="Yellow" Offset="1.0" />
+                        </LinearGradientBrush>
+                    </Setter.Value>
+                </Setter>
+            </Style>
+            <Style x:Key="btnNumbers5x5" TargetType="Button">
+                <Setter Property="TextColor" Value="Black"/>
+                <Setter Property="CornerRadius" Value="10"/>
+                <Setter Property="FontAttributes" Value="Bold"/>
+                <Setter Property="FontSize" Value="20"/>
+                <Setter Property="Background">
+                    <Setter.Value>
+                        <LinearGradientBrush EndPoint="0,0" x:Name="brush">
+                            <GradientStop Color="Yellow" Offset="0.1"/>
+                            <GradientStop Color="Red" Offset="1.0" />
+                        </LinearGradientBrush>
+                    </Setter.Value>
+                </Setter>
+            </Style>
+            
+
             <Style x:Key="buttons" TargetType="Button">
                 <Setter Property="TextColor" Value="Black"/>
                 <Setter Property="FontSize" Value="25"/>
@@ -86,7 +130,6 @@
                         </LinearGradientBrush>
                     </Setter.Value>
                 </Setter>
-
             </Style>
 
             <Style x:Key="btnLogin" TargetType="Button">
@@ -110,7 +153,7 @@
             <Style x:Key="Titles" TargetType="Label">
                 <Setter Property="BackgroundColor" Value="{StaticResource myFavColor}"/>
                 <Setter Property="TextColor" Value="{StaticResource WhiteColor}"/>
-                <Setter Property="FontSize" Value="35"/>
+                <Setter Property="FontSize" Value="33"/>
                 <Setter Property="FontAttributes" Value="Bold"/>
             </Style>
 
@@ -189,7 +232,7 @@
                 <Setter Property="TextColor" Value="White" />
                 <Setter Property="PlaceholderColor" Value="White"/>
                 <Setter Property="BackgroundColor" Value="Transparent"/>
-                <Setter Property="Margin" Value="50"/>
+                <Setter Property="Margin" Value="45"/>
                 <Setter Property="MaxLength" Value="1"/>
                 <Setter Property="Keyboard" Value="Numeric"/>
             </Style>
@@ -198,7 +241,7 @@
                 <Setter Property="TextColor" Value="White" />
                 <Setter Property="PlaceholderColor" Value="White"/>
                 <Setter Property="BackgroundColor" Value="Transparent"/>
-                <Setter Property="Margin" Value="34"/>
+                <Setter Property="Margin" Value="30"/>
                 <Setter Property="MaxLength" Value="1"/>
                 <Setter Property="Keyboard" Value="Numeric"/>
             </Style>

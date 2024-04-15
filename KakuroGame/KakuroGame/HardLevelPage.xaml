@@ -11,7 +11,7 @@
             <StackLayout>
 
                 <StackLayout  >
-                    <Label Text="Hard Level" Style="{StaticResource labelIcon}" FontAttributes="Bold" Margin="0,30,0,0"/>        
+                    <Label Text="Hard Level" Style="{StaticResource labelIcon}" FontAttributes="Bold" Margin="0"/>        
                 </StackLayout>
 
                 
@@ -189,8 +189,33 @@
                     </Frame> 
                     <StackLayout Orientation="Horizontal">
                         <Label Text="5x5" Style="{StaticResource labelIcon}" HorizontalOptions="Start" Margin="10"/>
-                        <Label Text="0:43" Style="{StaticResource labelIcon}" HorizontalOptions="EndAndExpand" Margin="10"/>
+                        <Label Style="{StaticResource labelIcon}"  HorizontalOptions="EndAndExpand" Margin="10" x:Name="lblTimer">
+                            <Label.FormattedText>
+                                <FormattedString>
+                                    <Span Text="{Binding Hours}" />
+                                    <Span Text="h:"/>
+                                    <Span Text="{Binding Minutes}" />
+                                    <Span Text="m:"/>
+                                    <Span Text="{Binding Seconds}" />
+                                    <Span Text="s"/>
+                                </FormattedString>
+                            </Label.FormattedText>
+                        </Label>
                     </StackLayout>
+
+                    <!--<StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand">
+                        <Button Text="1" Style="{StaticResource btnNumbers5x5}"/>
+                        <Button Text="2" Style="{StaticResource btnNumbers5x5}"/>
+                        <Button Text="3" Style="{StaticResource btnNumbers5x5}"/>
+                        <Button Text="4" Style="{StaticResource btnNumbers5x5}"/>
+                        <Button Text="5" Style="{StaticResource btnNumbers5x5}"/>
+                        <Button Text="6" Style="{StaticResource btnNumbers5x5}"/>
+                        <Button Text="7" Style="{StaticResource btnNumbers5x5}"/>
+                        <Button Text="8" Style="{StaticResource btnNumbers5x5}"/>
+                        <Button Text="9" Style="{StaticResource btnNumbers5x5}"/>
+                        <Button Text="X" Style="{StaticResource btnNumbers5x5}"/>
+                    </StackLayout>
+                    -->
                     <Button Text="Done" Style="{StaticResource buttons}" x:Name="btnDone" Clicked="btnDone_Clicked"/>
 
 

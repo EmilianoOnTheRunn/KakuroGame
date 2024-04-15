@@ -37,7 +37,14 @@
                             <ListView x:Name="recordListView" ItemSelected="recordListView_ItemSelected" BackgroundColor="Transparent">
                             <ListView.ItemTemplate>
                                 <DataTemplate>
-                                    <TextCell Text="Record" TextColor="Black"/>
+                                        <ViewCell>
+                                            <StackLayout>
+
+                                                <Label Text="{Binding GetTime}" TextColor="Black"/>
+                                                <Label Text="{Binding GetLevel}" TextColor="Black"/>
+
+                                            </StackLayout>
+                                        </ViewCell>
                                 </DataTemplate>
 
                             </ListView.ItemTemplate>

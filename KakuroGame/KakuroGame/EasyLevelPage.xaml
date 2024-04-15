@@ -11,7 +11,7 @@
             <StackLayout>
 
                 <StackLayout  >
-                    <Label Text="Easy Level" Style="{StaticResource labelIcon}" FontAttributes="Bold" Margin="0,60,0,0"/>        
+                    <Label Text="Easy Level" Style="{StaticResource labelIcon}" FontAttributes="Bold" Margin="0,0,0,0"/>        
                 </StackLayout>
 
                 
@@ -76,7 +76,7 @@
                         <Frame Style="{StaticResource FrameGame}" Grid.Row="1"
                                  Grid.Column="2">
                             <StackLayout>
-                                <Entry Text="3" Style="{StaticResource Input3x3}"/>
+                                <Entry Placeholder="3" Style="{StaticResource Input3x3}"/>
                             </StackLayout>
                         </Frame>
 
@@ -92,13 +92,13 @@
 
                         <Frame Style="{StaticResource FrameGame}" Grid.Row="2" Grid.Column="1">
                             <StackLayout>
-                                <Entry Text="2" Style="{StaticResource Input3x3}"/>
+                                <Entry Placeholder="2" Style="{StaticResource Input3x3}"/>
                             </StackLayout>
                         </Frame>                    
 
                         <Frame Style="{StaticResource FrameGame}" Grid.Row="2" Grid.Column="2">
                             <StackLayout>
-                                <Entry Text="1" Style="{StaticResource Input3x3}"/>
+                                <Entry Placeholder="1" Style="{StaticResource Input3x3}"/>
                             </StackLayout>
                         </Frame>
 
@@ -108,8 +108,33 @@
                     </Frame> 
                     <StackLayout Orientation="Horizontal">
                         <Label Text="3x3" Style="{StaticResource labelIcon}" HorizontalOptions="Start" Margin="10"/>
-                        <Label Text="0:12" Style="{StaticResource labelIcon}" HorizontalOptions="EndAndExpand" Margin="10"/>
+                        <Label Style="{StaticResource labelIcon}"  HorizontalOptions="EndAndExpand" Margin="10" x:Name="lblTimer">
+                            <Label.FormattedText>
+                                <FormattedString>
+                                    <Span Text="{Binding Hours}" />
+                                    <Span Text="h:"/>
+                                    <Span Text="{Binding Minutes}" />
+                                    <Span Text="m:"/>
+                                    <Span Text="{Binding Seconds}" />
+                                    <Span Text="s"/>
+                                </FormattedString>
+                            </Label.FormattedText>
+                        </Label>
                     </StackLayout>
+
+                    <!--<StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand">
+                        <Button Text="1" Style="{StaticResource btnNumbers3x3}"/>
+                        <Button Text="2" Style="{StaticResource btnNumbers3x3}"/>
+                        <Button Text="3" Style="{StaticResource btnNumbers3x3}"/>
+                        <Button Text="4" Style="{StaticResource btnNumbers3x3}"/>
+                        <Button Text="5" Style="{StaticResource btnNumbers3x3}"/>
+                        <Button Text="6" Style="{StaticResource btnNumbers3x3}"/>
+                        <Button Text="7" Style="{StaticResource btnNumbers3x3}"/>
+                        <Button Text="8" Style="{StaticResource btnNumbers3x3}"/>
+                        <Button Text="9" Style="{StaticResource btnNumbers3x3}"/>
+                        <Button Text="X" Style="{StaticResource btnNumbers3x3}"/>
+                    </StackLayout>
+                    -->
                     <Button Text="Done" Style="{StaticResource buttons}" x:Name="btnDone" Clicked="btnDone_Clicked"/>
 
 
