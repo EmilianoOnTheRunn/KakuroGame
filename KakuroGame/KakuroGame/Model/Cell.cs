@@ -4,8 +4,15 @@ namespace KakuroGame.Model
 {
 	public class Cell
 	{
-        public EDifficulty Type { get; set; }
-        public int? Number { get; set; }
+        public ECellType type { get; set; }
+        public int value { get; set; }
+        public int HorizontalTargetValue { get; set; }
+        public int VerticalTargetValue { get; set; }
+
+        public Cell()
+        {
+            type = ECellType.Blank;
+        }
     }
 }
 

@@ -3,10 +3,9 @@ namespace KakuroGame.Enums
 {
 	public enum ECellType
 	{
-		Blank,
-		Start,
-		Number,
-		End
-	}
+        Blank = 0,
+        Start = 1,
+        Value = 2,
+    }
 }
 

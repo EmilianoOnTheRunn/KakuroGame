@@ -15,9 +15,9 @@ namespace KakuroGame
 		}
         List<Record> listRecords = new List<Record>
         {
-            new Record(new Clock(), new Kakuro(3, 3), "user1"),
-            new Record(new Clock(), new Kakuro(4, 4), "user2"),
-            new Record(new Clock(), new Kakuro(5, 5), "user3")
+            new Record(new Clock(), new Kakuro(Enums.EDifficulty.Easy), "user1"),
+            new Record(new Clock(), new Kakuro(Enums.EDifficulty.Medium), "user2"),
+            new Record(new Clock(), new Kakuro(Enums.EDifficulty.Hard), "user3")
         };
 
         protected override void OnAppearing()

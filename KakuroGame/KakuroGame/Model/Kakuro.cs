@@ -4,31 +4,37 @@ namespace KakuroGame.Model
 {
 	public class Kakuro
 	{
+		public int Rows { get { return Board.GetLength(0); } }
+		public int Columns { get { return Board.GetLength(1); } }
 
-		public EDifficulty Size { get; set; }
-		public int Rows { get; set; }
-		public int Columns { get; set; }
         public Cell[,] Board { get; set; }
+        public EDifficulty Difficulty { get; set; }
 
-        public Kakuro()
+        public Kakuro(EDifficulty difficulty)
         {
+            Difficulty = difficulty;
+            Board = new Cell[((int)difficulty), ((int)difficulty)];
 
-            Rows = 0;
-            Columns = 0;
+            for (int i = 0; i < Board.GetLength(0); i++)
+            {
+                for (int j = 0; j < Board.GetLength(1); j++)
+                {
 
+                    Board[i, j] = new Cell();
+
+                }
+            }
         }
 
-        public Kakuro(int rows, int columns) {
-
-			Rows = rows;
-			Columns = columns;
-
+        public void UpdateCell(int value, (int, int) position)
+        {
+            Board[position.Item1, position.Item2].value = value;
         }
 
 
         public EDifficulty getSize() {
 
-            return Size; 
+            return Difficulty; 
         }
 
          

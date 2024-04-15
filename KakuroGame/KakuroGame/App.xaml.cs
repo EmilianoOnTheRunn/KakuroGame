@@ -1,6 +1,11 @@
 ﻿using System;
+using KakuroGame.Model;
+using Newtonsoft.Json;
+using System.Collections.Generic;
+using System.IO;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
+using System.Net.Http;
 
 namespace KakuroGame
 {
@@ -18,6 +23,13 @@ namespace KakuroGame
         {
             InitializeComponent();
             MainPage = new NavigationPage(new LoginPage());
+
+            string url = "https://github.com/EmilianoOnTheRunn/KakuroGame/blob/main/levels.json";
+            using (HttpClient client = new HttpClient())
+            {
+                var response = client.GetStringAsync(url);
+                Console.WriteLine(response);
+            }
             //Xamarin.Forms.NavigationPage.SetHasNavigationBar(this, false);
             //NavigationPage.SetHasNavigationBar(this, false);
             DatabaseLocation = databaseLocation;

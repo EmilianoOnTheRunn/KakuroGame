@@ -28,7 +28,7 @@ namespace KakuroGame
 
                         Clock clock = new Clock();
                         clock.InitializeElapsedTime(elapsedTime);
-                        Kakuro kakuro = new Kakuro(3, 3);
+                        Kakuro kakuro = new Kakuro(Enums.EDifficulty.Easy);
                         string username = SessionManager.GetSession();
                         Record record = new Record(clock, kakuro, username);
 
