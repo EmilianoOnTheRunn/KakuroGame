@@ -21,8 +21,8 @@
                         <Grid RowSpacing="0" ColumnSpacing="0">
 
                         <Grid.RowDefinitions>
-                            <RowDefinition Height="4*"/> 
-                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="Auto"/> 
+                            <RowDefinition Height="4*"/>
                             <RowDefinition Height="0"/> 
                         </Grid.RowDefinitions>
 
@@ -34,14 +34,14 @@
 
                          <Label Text="Level" Style="{StaticResource labelRecord}" Grid.Column="1" />
                          <Label Text="Time" Style="{StaticResource labelRecord}" />
-                            <ListView x:Name="recordListView" ItemSelected="recordListView_ItemSelected" BackgroundColor="Transparent">
+                            <ListView x:Name="recordListView" Grid.ColumnSpan="2" Grid.Row="1" ItemSelected="recordListView_ItemSelected" BackgroundColor="Transparent">
                             <ListView.ItemTemplate>
                                 <DataTemplate>
                                         <ViewCell>
-                                            <StackLayout>
+                                            <StackLayout Orientation="Horizontal">
 
-                                                <Label Text="{Binding GetTime}" TextColor="Black"/>
-                                                <Label Text="{Binding GetLevel}" TextColor="Black"/>
+                                                <Label Text="{Binding GetTime}" Style="{StaticResource labelRecord}" TextColor="Black"/>
+                                                <Label Text="{Binding GetLevel}"  Style="{StaticResource labelRecord}" TextColor="Black"/>
 
                                             </StackLayout>
                                         </ViewCell>

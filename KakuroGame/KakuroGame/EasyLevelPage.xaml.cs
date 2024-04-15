@@ -15,9 +15,27 @@ namespace KakuroGame
 		{
 			InitializeComponent ();
             lblTimer.BindingContext = new Clock();
+            PopulateValues();
+            
+        }
+
+        public void PopulateValues() {
+
             Game game = Game.GetInstance();
             game.GenerateKakuro(EDifficulty.Easy);
             BindingContext = game;
+            var board = game.kakuro.Board;
+            //Row 0
+            lblx0y1.Text = Convert.ToString(board[0, 1].VerticalTargetValue);
+            lblx0y2.Text = Convert.ToString(board[0, 2].VerticalTargetValue);
+            //Row 1
+            lblx1y0.Text = Convert.ToString(board[1, 0].HorizontalTargetValue);
+            lblx1y1.Text = Convert.ToString(board[1, 1].value);
+            lblx1y2.Text = Convert.ToString(board[1, 2].value);
+            //Row 2
+            lblx2y0.Text = Convert.ToString(board[2, 0].HorizontalTargetValue);
+            lblx2y1.Text = Convert.ToString(board[2, 1].value);
+            lblx2y2.Text = Convert.ToString(board[2, 2].value);
         }
 
         void btnDone_Clicked(System.Object sender, System.EventArgs e)

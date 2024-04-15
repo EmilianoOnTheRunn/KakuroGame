@@ -43,14 +43,14 @@
                         <Frame Style="{StaticResource FrameGame}" Grid.Column="1">
                              <StackLayout>
                                 <BoxView Style="{StaticResource diagonalLineTop3x3}"/>
-                                <Label Text="{Binding kakuro.Board[1, 0].Value}" Margin="40,0,0,20" TextColor="White"/>
+                                <Label Text="7" Margin="40,0,0,20" TextColor="White" x:Name="lblx0y1"/>
                             </StackLayout> 
                         </Frame>
 
                         <Frame Style="{StaticResource FrameGame}" Grid.Column="2">
                              <StackLayout>
                                 <BoxView Style="{StaticResource diagonalLineTop3x3}"/>
-                                <Label Text="{Binding kakuro.Board[2, 0].Value}" Margin="40,0,0,20" TextColor="White"/>
+                                <Label Text="4" Margin="40,0,0,20" TextColor="White" x:Name="lblx0y2"/>
                             </StackLayout>
                         </Frame>
 
@@ -60,7 +60,7 @@
 
                         <Frame Style="{StaticResource FrameGame}" Grid.Row="1">
                              <StackLayout>
-                                <Label Text="8" Margin="80,30,0,0" TextColor="White"/>
+                                <Label Text="8" Margin="80,30,0,0" TextColor="White" x:Name="lblx1y0"/>
                                 <BoxView Style="{StaticResource diagonalLineLeft3x3}" />
                             </StackLayout>
                         </Frame>
@@ -68,7 +68,7 @@
                         <Frame Style="{StaticResource FrameGame}" Grid.Row="1"
                                  Grid.Column="1">
                             <StackLayout>
-                                <Entry Placeholder="5" Style="{StaticResource Input3x3}"/>
+                                <Entry Placeholder="5" Style="{StaticResource Input3x3}" x:Name="lblx1y1"/>
                             </StackLayout>
                         </Frame>
 
@@ -76,7 +76,7 @@
                         <Frame Style="{StaticResource FrameGame}" Grid.Row="1"
                                  Grid.Column="2">
                             <StackLayout>
-                                <Entry Placeholder="3" Style="{StaticResource Input3x3}"/>
+                                <Entry Placeholder="3" Style="{StaticResource Input3x3}" x:Name="lblx1y2"/>
                             </StackLayout>
                         </Frame>
 
@@ -85,20 +85,20 @@
 
                         <Frame Style="{StaticResource FrameGame}" Grid.Row="2">
                              <StackLayout>
-                                <Label Text="3" Margin="80,30,0,0" TextColor="White"/>
+                                <Label Text="3" Margin="80,30,0,0" TextColor="White" x:Name="lblx2y0"/>
                                 <BoxView Style="{StaticResource diagonalLineLeft3x3}" />
                             </StackLayout>
                         </Frame>
 
                         <Frame Style="{StaticResource FrameGame}" Grid.Row="2" Grid.Column="1">
                             <StackLayout>
-                                <Entry Placeholder="2" Style="{StaticResource Input3x3}"/>
+                                <Entry Placeholder="2" Style="{StaticResource Input3x3}" x:Name="lblx2y1"/>
                             </StackLayout>
                         </Frame>                    
 
                         <Frame Style="{StaticResource FrameGame}" Grid.Row="2" Grid.Column="2">
                             <StackLayout>
-                                <Entry Placeholder="1" Style="{StaticResource Input3x3}"/>
+                                <Entry Placeholder="1" Style="{StaticResource Input3x3}" x:Name="lblx2y2"/>
                             </StackLayout>
                         </Frame>
 
