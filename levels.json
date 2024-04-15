@@ -1,0 +1,341 @@
+[
+  {
+    "Board": [
+      [
+        {
+          "type": 0,
+          "value": 0,
+          "HorizontalTargetValue": 0,
+          "VerticalTargetValue": 0
+        },
+        {
+          "type": 1,
+          "value": 0,
+          "HorizontalTargetValue": 0,
+          "VerticalTargetValue": 11
+        },
+        {
+          "type": 1,
+          "value": 0,
+          "HorizontalTargetValue": 0,
+          "VerticalTargetValue": 3
+        }
+      ],
+      [
+        {
+          "type": 1,
+          "value": 0,
+          "HorizontalTargetValue": 8,
+          "VerticalTargetValue": 0
+        },
+        {
+          "type": 2,
+          "value": 0,
+          "HorizontalTargetValue": 0,
+          "VerticalTargetValue": 0
+        },
+        {
+          "type": 2,
+          "value": 0,
+          "HorizontalTargetValue": 0,
+          "VerticalTargetValue": 0
+        }
+      ],
+      [
+        {
+          "type": 1,
+          "value": 0,
+          "HorizontalTargetValue": 6,
+          "VerticalTargetValue": 0
+        },
+        {
+          "type": 2,
+          "value": 0,
+          "HorizontalTargetValue": 0,
+          "VerticalTargetValue": 0
+        },
+        {
+          "type": 2,
+          "value": 0,
+          "HorizontalTargetValue": 0,
+          "VerticalTargetValue": 0
+        }
+      ]
+    ],
+    "Difficulty": 3
+  },
+  {
+    "Board": [
+      [
+        {
+          "type": 0,
+          "value": 0,
+          "HorizontalTargetValue": 0,
+          "VerticalTargetValue": 0
+        },
+        {
+          "type": 1,
+          "value": 0,
+          "HorizontalTargetValue": 0,
+          "VerticalTargetValue": 23
+        },
+        {
+          "type": 1,
+          "value": 0,
+          "HorizontalTargetValue": 0,
+          "VerticalTargetValue": 7
+        },
+        {
+          "type": 1,
+          "value": 0,
+          "HorizontalTargetValue": 0,
+          "VerticalTargetValue": 6
+        }
+      ],
+      [
+        {
+          "type": 1,
+          "value": 0,
+          "HorizontalTargetValue": 15,
+          "VerticalTargetValue": 0
+        },
+        {
+          "type": 0,
+          "value": 0,
+          "HorizontalTargetValue": 0,
+          "VerticalTargetValue": 0
+        },
+        {
+          "type": 0,
+          "value": 0,
+          "HorizontalTargetValue": 0,
+          "VerticalTargetValue": 0
+        },
+        {
+          "type": 0,
+          "value": 0,
+          "HorizontalTargetValue": 0,
+          "VerticalTargetValue": 0
+        }
+      ],
+      [
+        {
+          "type": 1,
+          "value": 0,
+          "HorizontalTargetValue": 11,
+          "VerticalTargetValue": 0
+        },
+        {
+          "type": 0,
+          "value": 0,
+          "HorizontalTargetValue": 0,
+          "VerticalTargetValue": 0
+        },
+        {
+          "type": 0,
+          "value": 0,
+          "HorizontalTargetValue": 0,
+          "VerticalTargetValue": 0
+        },
+        {
+          "type": 0,
+          "value": 0,
+          "HorizontalTargetValue": 0,
+          "VerticalTargetValue": 0
+        }
+      ],
+      [
+        {
+          "type": 1,
+          "value": 0,
+          "HorizontalTargetValue": 10,
+          "VerticalTargetValue": 0
+        },
+        {
+          "type": 0,
+          "value": 0,
+          "HorizontalTargetValue": 0,
+          "VerticalTargetValue": 0
+        },
+        {
+          "type": 0,
+          "value": 0,
+          "HorizontalTargetValue": 0,
+          "VerticalTargetValue": 0
+        },
+        {
+          "type": 0,
+          "value": 0,
+          "HorizontalTargetValue": 0,
+          "VerticalTargetValue": 0
+        }
+      ]
+    ],
+    "Difficulty": 4
+  },
+  {
+    "Board": [
+      [
+        {
+          "type": 0,
+          "value": 0,
+          "HorizontalTargetValue": 0,
+          "VerticalTargetValue": 0
+        },
+        {
+          "type": 0,
+          "value": 0,
+          "HorizontalTargetValue": 0,
+          "VerticalTargetValue": 0
+        },
+        {
+          "type": 1,
+          "value": 0,
+          "HorizontalTargetValue": 0,
+          "VerticalTargetValue": 12
+        },
+        {
+          "type": 1,
+          "value": 0,
+          "HorizontalTargetValue": 0,
+          "VerticalTargetValue": 25
+        },
+        {
+          "type": 0,
+          "value": 0,
+          "HorizontalTargetValue": 0,
+          "VerticalTargetValue": 0
+        }
+      ],
+      [
+        {
+          "type": 0,
+          "value": 0,
+          "HorizontalTargetValue": 0,
+          "VerticalTargetValue": 0
+        },
+        {
+          "type": 1,
+          "value": 0,
+          "HorizontalTargetValue": 12,
+          "VerticalTargetValue": 16
+        },
+        {
+          "type": 0,
+          "value": 0,
+          "HorizontalTargetValue": 0,
+          "VerticalTargetValue": 0
+        },
+        {
+          "type": 0,
+          "value": 0,
+          "HorizontalTargetValue": 0,
+          "VerticalTargetValue": 0
+        },
+        {
+          "type": 1,
+          "value": 0,
+          "HorizontalTargetValue": 0,
+          "VerticalTargetValue": 6
+        }
+      ],
+      [
+        {
+          "type": 1,
+          "value": 0,
+          "HorizontalTargetValue": 26,
+          "VerticalTargetValue": 0
+        },
+        {
+          "type": 0,
+          "value": 0,
+          "HorizontalTargetValue": 0,
+          "VerticalTargetValue": 0
+        },
+        {
+          "type": 0,
+          "value": 0,
+          "HorizontalTargetValue": 0,
+          "VerticalTargetValue": 0
+        },
+        {
+          "type": 0,
+          "value": 0,
+          "HorizontalTargetValue": 0,
+          "VerticalTargetValue": 0
+        },
+        {
+          "type": 0,
+          "value": 0,
+          "HorizontalTargetValue": 0,
+          "VerticalTargetValue": 0
+        }
+      ],
+      [
+        {
+          "type": 1,
+          "value": 0,
+          "HorizontalTargetValue": 13,
+          "VerticalTargetValue": 0
+        },
+        {
+          "type": 0,
+          "value": 0,
+          "HorizontalTargetValue": 0,
+          "VerticalTargetValue": 0
+        },
+        {
+          "type": 0,
+          "value": 0,
+          "HorizontalTargetValue": 0,
+          "VerticalTargetValue": 0
+        },
+        {
+          "type": 0,
+          "value": 0,
+          "HorizontalTargetValue": 0,
+          "VerticalTargetValue": 0
+        },
+        {
+          "type": 0,
+          "value": 0,
+          "HorizontalTargetValue": 0,
+          "VerticalTargetValue": 0
+        }
+      ],
+      [
+        {
+          "type": 0,
+          "value": 0,
+          "HorizontalTargetValue": 0,
+          "VerticalTargetValue": 0
+        },
+        {
+          "type": 1,
+          "value": 0,
+          "HorizontalTargetValue": 7,
+          "VerticalTargetValue": 0
+        },
+        {
+          "type": 0,
+          "value": 0,
+          "HorizontalTargetValue": 0,
+          "VerticalTargetValue": 0
+        },
+        {
+          "type": 0,
+          "value": 0,
+          "HorizontalTargetValue": 0,
+          "VerticalTargetValue": 0
+        },
+        {
+          "type": 0,
+          "value": 0,
+          "HorizontalTargetValue": 0,
+          "VerticalTargetValue": 0
+        }
+      ]
+    ],
+    "Difficulty": 5
+  }
+]
