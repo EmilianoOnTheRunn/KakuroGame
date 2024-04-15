@@ -12,7 +12,7 @@ namespace KakuroGame
 		public MediumLevelPage ()
 		{
 			InitializeComponent ();
-            BindingContext = new Clock();
+            lblTimer.BindingContext = new Clock();
         }
 
         void btnDone_Clicked(System.Object sender, System.EventArgs e)

@@ -35,7 +35,7 @@ namespace KakuroGame.Model
         public EDifficulty getSize() {
 
             return Difficulty; 
-        }
+        } 
 
          
 		

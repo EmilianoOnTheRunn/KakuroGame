@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using Xamarin.Essentials;
 using Xamarin.Forms;
 using KakuroGame.Model;
+using KakuroGame.Enums;
 using System.ComponentModel;
 
 namespace KakuroGame
@@ -13,8 +14,11 @@ namespace KakuroGame
 		public EasyLevelPage ()
 		{
 			InitializeComponent ();
-			BindingContext = new Clock();
-		}
+            lblTimer.BindingContext = new Clock();
+            Game game = Game.GetInstance();
+            game.GenerateKakuro(EDifficulty.Easy);
+            BindingContext = game;
+        }
 
         void btnDone_Clicked(System.Object sender, System.EventArgs e)
         {

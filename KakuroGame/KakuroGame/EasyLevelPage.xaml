@@ -43,14 +43,14 @@
                         <Frame Style="{StaticResource FrameGame}" Grid.Column="1">
                              <StackLayout>
                                 <BoxView Style="{StaticResource diagonalLineTop3x3}"/>
-                                <Label Text="7" Margin="40,0,0,20" TextColor="White"/>
-                            </StackLayout>
+                                <Label Text="{Binding kakuro.Board[1, 0].Value}" Margin="40,0,0,20" TextColor="White"/>
+                            </StackLayout> 
                         </Frame>
 
                         <Frame Style="{StaticResource FrameGame}" Grid.Column="2">
                              <StackLayout>
                                 <BoxView Style="{StaticResource diagonalLineTop3x3}"/>
-                                <Label Text="4" Margin="40,0,0,20" TextColor="White"/>
+                                <Label Text="{Binding kakuro.Board[2, 0].Value}" Margin="40,0,0,20" TextColor="White"/>
                             </StackLayout>
                         </Frame>
 
