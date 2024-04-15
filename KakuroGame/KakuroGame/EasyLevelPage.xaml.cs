@@ -53,17 +53,17 @@ namespace KakuroGame
                         clock.InitializeElapsedTime(elapsedTime);
                         Kakuro kakuro = new Kakuro(Enums.EDifficulty.Easy);
                         string username = SessionManager.GetSession();
-                        Record record = new Record(clock, kakuro, username);
+                        //Record record = new Record(clock, kakuro.Difficulty, username);
 
-                        if (RecordDBManager.SaveRecord(record))
-                        {
-                            DisplayAlert("Success", "Record successfully saved", "Ok");
-                            Navigation.PopAsync();
-                        }
-                        else
-                        {
-                            DisplayAlert("Failed", "Failed to save the game", "Ok");
-                        }
+                        //if (RecordDBManager.SaveRecord(record))
+                        //{
+                        //    DisplayAlert("Success", "Record successfully saved", "Ok");
+                        //    Navigation.PopAsync();
+                        //}
+                        //else
+                        //{
+                        //    DisplayAlert("Failed", "Failed to save the game", "Ok");
+                        //}
                     }
                     
                 }
@@ -91,11 +91,19 @@ namespace KakuroGame
                     if (game.CheckCell(value, (rowId, columnId)))
                     {
                         DisplayAlert("Congratulations", "You have won!", "Ok");
+                        Clock clock = lblTimer.BindingContext as Clock;
+                        if (clock != null)
+                        {
+                            var hour = Convert.ToInt32(clock.Hours);
+                            var minutes = Convert.ToInt32(clock.Minutes);
+                            var second = Convert.ToInt32(clock.Seconds);
+                            DateTime time = new DateTime(DateTime.Now.Year, DateTime.Now.Month, DateTime.Now.Day,
+                            hour, minutes, second);
+                            RecordDBManager.Add(time);
+                        }
                     }
 
                 }
-                   
-
             }
         }
 

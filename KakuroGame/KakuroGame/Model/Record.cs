@@ -1,4 +1,5 @@
 ﻿using System;
+using KakuroGame.Enums;
 using SQLite;
 
 namespace KakuroGame.Model
@@ -8,24 +9,25 @@ namespace KakuroGame.Model
         [PrimaryKey, AutoIncrement]
         public int RecordId { get; set; }
 
-        public Clock Clock { get; }
-        public Kakuro Kakuro { get; }
-        public string Username { get; }
+        public DateTime Clock { get; set; }
+        public EDifficulty Difficulty { get; set; }
+        [MaxLength(10)]
+        public string Username { get; set; }
 
         public Record()
         {
 
         }
-        public Record(Clock clock, Kakuro kakuro, string username)
+        public Record(DateTime clock, EDifficulty kakuro, string username)
         {
             Clock = clock;
-            Kakuro = kakuro;
+            Difficulty = kakuro;
             Username = username; 
         }
 
-        public string GetTime => $"{Clock.Hours}h:{Clock.Minutes}m:{Clock.Seconds}s";
+        public string GetTime => $"{Clock.Hour}h:{Clock.Minute}m:{Clock.Second}s";
 
-        public int GetLevel  => (int)Kakuro.getSize();
+        public string GetLevel  => Difficulty.ToString();
 
 
     }
