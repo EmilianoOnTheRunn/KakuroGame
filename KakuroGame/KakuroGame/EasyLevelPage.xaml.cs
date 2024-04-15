@@ -91,11 +91,14 @@ namespace KakuroGame
                     if (game.CheckCell(value, (rowId, columnId)))
                     {
                         DisplayAlert("Congratulations", "You have won!", "Ok");
+                        Clock clock = lblTimer.BindingContext as Clock;
+                        if (clock != null)
+                        {
+                            RecordDBManager.Add(clock);
+                        }
                     }
 
                 }
-                   
-
             }
         }
 

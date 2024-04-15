@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using Xamarin.Forms;
 using KakuroGame.Model;
 using SQLite;
+using System.Linq;
 
 namespace KakuroGame
 {	
@@ -20,22 +21,22 @@ namespace KakuroGame
             new Record(new Clock(), new Kakuro(Enums.EDifficulty.Hard), "user3")
         };
 
-        protected override void OnAppearing()
-        {
-            base.OnAppearing();
-            recordListView.ItemsSource = listRecords;
-        }
-
         //protected override void OnAppearing()
         //{
         //    base.OnAppearing();
-        //    using (SQLiteConnection con = new SQLiteConnection(App.DatabaseLocation))
-        //    {
-        //        //con.CreateTable<Record>();
-        //        //var records = con.Table<Record>().ToList();
-        //        recordListView.ItemsSource = listRecords;
-        //    }
+        //    recordListView.ItemsSource = listRecords;
         //}
+
+        protected override void OnAppearing()
+        {
+            base.OnAppearing();
+            using (SQLiteConnection con = new SQLiteConnection(App.DatabaseLocation))
+            {
+                con.CreateTable<Record>();
+                var records = con.Table<Record>().ToList();
+                recordListView.ItemsSource = records;
+            }
+        }
 
 
         void recordListView_ItemSelected(System.Object sender, Xamarin.Forms.SelectedItemChangedEventArgs e)

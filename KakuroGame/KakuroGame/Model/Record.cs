@@ -10,6 +10,7 @@ namespace KakuroGame.Model
 
         public Clock Clock { get; }
         public Kakuro Kakuro { get; }
+        [MaxLength(10)]
         public string Username { get; }
 
         public Record()
