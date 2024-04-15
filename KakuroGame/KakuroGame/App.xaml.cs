@@ -23,7 +23,6 @@ namespace KakuroGame
         {
             InitializeComponent();
             MainPage = new NavigationPage(new LoginPage());
-            KakuroFetcher.FetchKakuro(Enums.EDifficulty.Easy);
             //Xamarin.Forms.NavigationPage.SetHasNavigationBar(this, false);
             //NavigationPage.SetHasNavigationBar(this, false);
             DatabaseLocation = databaseLocation;
