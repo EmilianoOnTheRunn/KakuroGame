@@ -20,9 +20,13 @@
   <ItemGroup>
     <None Remove="Model\" />
     <None Remove="Enums\" />
+    <None Remove="Levels.json" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Model\" />
     <Folder Include="Enums\" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Levels.json" />
   </ItemGroup>
 </Project>

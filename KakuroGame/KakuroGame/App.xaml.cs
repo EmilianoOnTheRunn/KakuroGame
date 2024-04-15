@@ -23,13 +23,7 @@ namespace KakuroGame
         {
             InitializeComponent();
             MainPage = new NavigationPage(new LoginPage());
-
-            string url = "https://github.com/EmilianoOnTheRunn/KakuroGame/blob/main/levels.json";
-            using (HttpClient client = new HttpClient())
-            {
-                var response = client.GetStringAsync(url);
-                Console.WriteLine(response);
-            }
+            KakuroFetcher.FetchKakuro(Enums.EDifficulty.Easy);
             //Xamarin.Forms.NavigationPage.SetHasNavigationBar(this, false);
             //NavigationPage.SetHasNavigationBar(this, false);
             DatabaseLocation = databaseLocation;

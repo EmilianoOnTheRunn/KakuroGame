@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using Newtonsoft.Json;
 using System.Linq;
+using System.Reflection;
 
 namespace KakuroGame.Model
 {
@@ -13,9 +14,12 @@ namespace KakuroGame.Model
         {
             List<Kakuro> kakuros;
 
-            using (StreamReader file = new StreamReader(@"./levels.json"))
+            string jsonFileName = "Levels.json";
+            var assembly = typeof(MainPage).GetTypeInfo().Assembly;
+            Stream stream = assembly.GetManifestResourceStream($"{assembly.GetName().Name}.{jsonFileName}");
+            using (var streamReader = new StreamReader(stream))
             {
-                string json = file.ReadToEnd();
+                string json = streamReader.ReadToEnd();
                 kakuros = JsonConvert.DeserializeObject<List<Kakuro>>(json);
             }
 
