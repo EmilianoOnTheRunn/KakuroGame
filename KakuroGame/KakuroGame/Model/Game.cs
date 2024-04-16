@@ -32,9 +32,7 @@ namespace KakuroGame.Model
         {
             kakuro.UpdateCell(value, position);
 
-            var flag = ValidateKakuro();
-            Console.WriteLine(flag);
-            return flag;
+            return ValidateKakuro();
         }
 
         private bool ValidateKakuro()
