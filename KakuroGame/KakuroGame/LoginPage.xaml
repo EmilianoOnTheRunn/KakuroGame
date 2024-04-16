@@ -11,13 +11,22 @@
 
             <StackLayout Margin="0,0,0,0">
 
-                <StackLayout  Margin="0,40,104,0">
+                <!--<StackLayout  Margin="0,40,104,0">
 
                     <Frame Style="{StaticResource Bubble1}">  
                         <Label Text="Welcome to Kakuro Kingdom"  Style="{StaticResource Titles}"/>
                     </Frame>
 
-                </StackLayout>
+                </StackLayout>-->
+                <OnPlatform x:TypeArguments="View">
+                    <OnPlatform.iOS>
+                        <StackLayout Margin="0,40,104,0">
+                            <Frame Style="{StaticResource Bubble1}">  
+                                <Label Text="Welcome to Kakuro Kingdom" Style="{StaticResource Titles}"/>
+                            </Frame>
+                        </StackLayout>
+                    </OnPlatform.iOS>
+                </OnPlatform>
                 
                 
                 <StackLayout Margin="0,100,0,0">

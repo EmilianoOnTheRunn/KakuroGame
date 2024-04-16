@@ -18,6 +18,7 @@ namespace KakuroGame.Model
         {
 
         }
+
         public Record(DateTime clock, EDifficulty kakuro, string username)
         {
             Clock = clock;

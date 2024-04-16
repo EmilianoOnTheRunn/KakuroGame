@@ -30,25 +30,25 @@ namespace KakuroGame
             //Row 1
             lblx1y1Top.Text = Convert.ToString(board[1, 1].HorizontalTargetValue);
             lblx1y1Bottom.Text = Convert.ToString(board[1, 1].VerticalTargetValue);
-            lblx1y2.Text = Convert.ToString(board[1, 2].value);
-            lblx1y3.Text = Convert.ToString(board[1, 3].value);
+            lblx1y2.Text = "";
+            lblx1y3.Text = "";
             lblx1y4.Text = Convert.ToString(board[1, 4].VerticalTargetValue);
             //Row 2
             lblx2y0.Text = Convert.ToString(board[2, 0].HorizontalTargetValue);
-            lblx2y1.Text = Convert.ToString(board[2, 1].value);
-            lblx2y2.Text = Convert.ToString(board[2, 2].value);
-            lblx2y3.Text = Convert.ToString(board[2, 3].value);
-            lblx2y4.Text = Convert.ToString(board[2, 4].value);
+            lblx2y1.Text = "";
+            lblx2y2.Text = "";
+            lblx2y3.Text = "";
+            lblx2y4.Text = "";
             //Row 3
             lblx3y0.Text = Convert.ToString(board[3, 0].HorizontalTargetValue);
-            lblx3y1.Text = Convert.ToString(board[3, 1].value);
-            lblx3y2.Text = Convert.ToString(board[3, 2].value);
-            lblx3y3.Text = Convert.ToString(board[3, 3].value);
-            lblx3y4.Text = Convert.ToString(board[3, 4].value);
+            lblx3y1.Text = "";
+            lblx3y2.Text = "";
+            lblx3y3.Text = "";
+            lblx3y4.Text = "";
             //Row 4
             lblx4y1.Text = Convert.ToString(board[4, 1].HorizontalTargetValue);
-            lblx4y2.Text = Convert.ToString(board[4, 2].value);
-            lblx4y3.Text = Convert.ToString(board[4, 3].value);
+            lblx4y2.Text = "";
+            lblx4y3.Text = "";
         }
 
         void btnDone_Clicked(System.Object sender, System.EventArgs e)
@@ -70,11 +70,19 @@ namespace KakuroGame
                     if (game.CheckCell(value, (rowId, columnId)))
                     {
                         DisplayAlert("Congratulations", "You have won!", "Ok");
+                        Clock clock = lblTimer.BindingContext as Clock;
+                        if (clock != null)
+                        {
+                            var hour = Convert.ToInt32(clock.Hours);
+                            var minutes = Convert.ToInt32(clock.Minutes);
+                            var second = Convert.ToInt32(clock.Seconds);
+                            DateTime time = new DateTime(DateTime.Now.Year, DateTime.Now.Month, DateTime.Now.Day,
+                            hour, minutes, second);
+                            RecordDBManager.Add(time);
+                        }
                     }
 
                 }
-
-
             }
         }
     }
