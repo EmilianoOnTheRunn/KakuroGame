@@ -51,10 +51,6 @@ namespace KakuroGame
         }
 
 
-        //void lblx1y1_PropertyChanged(System.Object sender, System.ComponentModel.PropertyChangedEventArgs e)
-        //{
-
-        //}
 
         void lblx1y1_PropertyChanged_1(System.Object sender, System.ComponentModel.PropertyChangedEventArgs e)
         {

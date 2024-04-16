@@ -55,6 +55,28 @@ namespace KakuroGame
         {
             Navigation.PopAsync();
         }
+
+        void lblx1y2_PropertyChanged(System.Object sender, System.ComponentModel.PropertyChangedEventArgs e)
+        {
+            if (sender is Entry entry && e.PropertyName == "Text")
+            {
+
+                int rowId = ValidateCells.GetRowId(entry);
+                int columnId = ValidateCells.GetColumnId(entry);
+                Game game = Game.GetInstance();
+                int value;
+                if (int.TryParse(entry.Text, out value))
+                {
+                    if (game.CheckCell(value, (rowId, columnId)))
+                    {
+                        DisplayAlert("Congratulations", "You have won!", "Ok");
+                    }
+
+                }
+
+
+            }
+        }
     }
 }
 

@@ -41,39 +41,41 @@ namespace KakuroGame
 
         void btnDone_Clicked(System.Object sender, System.EventArgs e)
         {
-            try
-            {
-                if (!string.IsNullOrEmpty(lblTimer.Text)) {
+            Navigation.PopAsync();
 
-                    if (TimeSpan.TryParse(lblTimer.Text, out TimeSpan elapsedTime)) {
+            //try
+            //{
+            //    if (!string.IsNullOrEmpty(lblTimer.Text)) {
 
-                        //TimeSpan elapsedTime = TimeSpan.Parse(lblTimer.Text);
+            //        if (TimeSpan.TryParse(lblTimer.Text, out TimeSpan elapsedTime)) {
 
-                        Clock clock = new Clock();
-                        clock.InitializeElapsedTime(elapsedTime);
-                        Kakuro kakuro = new Kakuro(Enums.EDifficulty.Easy);
-                        string username = SessionManager.GetSession();
-                        //Record record = new Record(clock, kakuro.Difficulty, username);
+            //            //TimeSpan elapsedTime = TimeSpan.Parse(lblTimer.Text);
 
-                        //if (RecordDBManager.SaveRecord(record))
-                        //{
-                        //    DisplayAlert("Success", "Record successfully saved", "Ok");
-                        //    Navigation.PopAsync();
-                        //}
-                        //else
-                        //{
-                        //    DisplayAlert("Failed", "Failed to save the game", "Ok");
-                        //}
-                    }
+            //            Clock clock = new Clock();
+            //            clock.InitializeElapsedTime(elapsedTime);
+            //            Kakuro kakuro = new Kakuro(Enums.EDifficulty.Easy);
+            //            string username = SessionManager.GetSession();
+            //            //Record record = new Record(clock, kakuro.Difficulty, username);
+
+            //            //if (RecordDBManager.SaveRecord(record))
+            //            //{
+            //            //    DisplayAlert("Success", "Record successfully saved", "Ok");
+            //            //    Navigation.PopAsync();
+            //            //}
+            //            //else
+            //            //{
+            //            //    DisplayAlert("Failed", "Failed to save the game", "Ok");
+            //            //}
+            //        }
                     
-                }
+            //    }
                 
-            }
-            catch (Exception ex) {
+            //}
+            //catch (Exception ex) {
 
-                DisplayAlert("Error", $"System error: {ex.Message}", "Ok");
+            //    DisplayAlert("Error", $"System error: {ex.Message}", "Ok");
 
-            }
+            //}
 
         }
 
