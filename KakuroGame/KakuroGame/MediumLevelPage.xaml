@@ -44,7 +44,7 @@
                         <Frame Style="{StaticResource FrameGame}" Grid.Column="1">
                              <StackLayout>
                                 <BoxView Style="{StaticResource diagonalLine4x4Top}"/>
-                                <Label Text="" Margin="30,0,0,15" TextColor="White" x:Name="lblx0y1" local:ValidateCells.RowId="0" local:ValidateCells.ColumnId="1" />
+                                <Label Text="" Margin="30,0,0,15" TextColor="White" x:Name="lblx0y1" local:ValidateCells.RowId="1" local:ValidateCells.ColumnId="0" />
                             </StackLayout>
                         </Frame>
 
