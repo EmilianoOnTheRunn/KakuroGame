@@ -14,7 +14,6 @@ namespace KakuroGame.Model
         {
             using (SQLiteConnection con = new SQLiteConnection(App.DatabaseLocation))
             {
-                con.DropTable<Record>();
                 con.CreateTable<Record>();
 
                 int rowsAffected = con.Insert(record);
