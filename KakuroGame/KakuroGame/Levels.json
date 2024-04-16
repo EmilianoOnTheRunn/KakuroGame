@@ -192,13 +192,13 @@
           "type": 1,
           "value": 0,
           "HorizontalTargetValue": 0,
-          "VerticalTargetValue": 12
+          "VerticalTargetValue": 29
         },
         {
           "type": 1,
           "value": 0,
           "HorizontalTargetValue": 0,
-          "VerticalTargetValue": 25
+          "VerticalTargetValue": 10
         },
         {
           "type": 0,
@@ -218,7 +218,7 @@
           "type": 1,
           "value": 0,
           "HorizontalTargetValue": 12,
-          "VerticalTargetValue": 16
+          "VerticalTargetValue": 17
         },
         {
           "type": 2,
@@ -236,14 +236,14 @@
           "type": 1,
           "value": 0,
           "HorizontalTargetValue": 0,
-          "VerticalTargetValue": 6
+          "VerticalTargetValue": 4
         }
       ],
       [
         {
           "type": 1,
           "value": 0,
-          "HorizontalTargetValue": 26,
+          "HorizontalTargetValue": 16,
           "VerticalTargetValue": 0
         },
         {
@@ -275,7 +275,7 @@
         {
           "type": 1,
           "value": 0,
-          "HorizontalTargetValue": 13,
+          "HorizontalTargetValue": 23,
           "VerticalTargetValue": 0
         },
         {
@@ -313,7 +313,7 @@
         {
           "type": 1,
           "value": 0,
-          "HorizontalTargetValue": 7,
+          "HorizontalTargetValue": 9,
           "VerticalTargetValue": 0
         },
         {
@@ -329,7 +329,7 @@
           "VerticalTargetValue": 0
         },
         {
-          "type": 2,
+          "type": 0,
           "value": 0,
           "HorizontalTargetValue": 0,
           "VerticalTargetValue": 0

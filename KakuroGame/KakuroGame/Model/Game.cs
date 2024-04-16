@@ -58,7 +58,7 @@ namespace KakuroGame.Model
                     var cellForVertical = board[j, i];
                     if (cellForVertical.type != ECellType.Blank)
                     {
-                        
+
                         if (cellForVertical.type == ECellType.Start)
                         {
                             if (startedCountForX)
@@ -67,19 +67,22 @@ namespace KakuroGame.Model
                                     return false;
 
                                 currentXSum = 0;
+                                numberTrackX = new HashSet<int>();
                             }
 
                             expectedTotalForX = cellForVertical.VerticalTargetValue;
                             startedCountForX = true;
                         }
-                        var value = cellForVertical.value;
-                        currentXSum += value;
+                        else
+                        {
+                            var value = cellForVertical.value;
+                            currentXSum += value;
 
-                        if (numberTrackX.Contains(value))
-                            return false;
+                            if (numberTrackX.Contains(value))
+                                return false;
 
-                        numberTrackX.Add(value);
-                    
+                            numberTrackX.Add(value);
+                        }
                     }
 
                     // Check if the sum of the rows is accurate
@@ -97,6 +100,7 @@ namespace KakuroGame.Model
                                     return false;
 
                                 currentYSum = 0;
+                                numberTrackY = new HashSet<int>();
                             }
 
                             expectedTotalForY = cellForHorizontal.HorizontalTargetValue;

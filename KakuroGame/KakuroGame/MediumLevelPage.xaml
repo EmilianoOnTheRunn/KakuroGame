@@ -128,26 +128,26 @@
 
                         <Frame Style="{StaticResource FrameGame}" Grid.Row="3">
                              <StackLayout>
-                                <Label Text="" Margin="60,20,0,0" TextColor="White" x:Name="lblx3y0" local:ValidateCells.RowId="2" local:ValidateCells.ColumnId="3" />
+                                <Label Text="" Margin="60,20,0,0" TextColor="White" x:Name="lblx3y0" local:ValidateCells.RowId="3" local:ValidateCells.ColumnId="0" />
                                 <BoxView Style="{StaticResource diagonalLine2}"/>
                             </StackLayout>
                         </Frame>
 
                         <Frame Style="{StaticResource FrameGame}" Grid.Row="3" Grid.Column="1">
                             <StackLayout>
-                                <Entry Placeholder="" Style="{StaticResource Input4x4}" x:Name="lblx3y1" local:ValidateCells.RowId="2" local:ValidateCells.ColumnId="3" PropertyChanged="lblx1y1_PropertyChanged_1"/>
+                                <Entry Placeholder="" Style="{StaticResource Input4x4}" x:Name="lblx3y1" local:ValidateCells.RowId="3" local:ValidateCells.ColumnId="1" PropertyChanged="lblx1y1_PropertyChanged_1"/>
                             </StackLayout>
                         </Frame>
                         
                         <Frame Style="{StaticResource FrameGame}" Grid.Row="3" Grid.Column="2">
                             <StackLayout>
-                                <Entry Placeholder="" Style="{StaticResource Input4x4}" x:Name="lblx3y2" local:ValidateCells.RowId="2" local:ValidateCells.ColumnId="3" PropertyChanged="lblx1y1_PropertyChanged_1"/>
+                                <Entry Placeholder="" Style="{StaticResource Input4x4}" x:Name="lblx3y2" local:ValidateCells.RowId="3" local:ValidateCells.ColumnId="2" PropertyChanged="lblx1y1_PropertyChanged_1"/>
                             </StackLayout>
                         </Frame>
                         
                         <Frame Style="{StaticResource FrameGame}" Grid.Row="3" Grid.Column="3">
                             <StackLayout>
-                                <Entry Placeholder="" Style="{StaticResource Input4x4}" x:Name="lblx3y3" local:ValidateCells.RowId="2" local:ValidateCells.ColumnId="3" PropertyChanged="lblx1y1_PropertyChanged_1"/>
+                                <Entry Placeholder="" Style="{StaticResource Input4x4}" x:Name="lblx3y3" local:ValidateCells.RowId="3" local:ValidateCells.ColumnId="3" PropertyChanged="lblx1y1_PropertyChanged_1"/>
                             </StackLayout>
                         </Frame>
 
