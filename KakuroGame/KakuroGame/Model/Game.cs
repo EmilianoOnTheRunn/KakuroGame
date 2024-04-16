@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using KakuroGame.Enums;
 
 namespace KakuroGame.Model
@@ -40,86 +41,91 @@ namespace KakuroGame.Model
         {
             var board = kakuro.Board;
 
-            int expectedTotal = -1;
-            var startedCount = false;
-            int currentSum = 0;
+            int expectedTotalForX = -1;
+            var startedCountForX = false;
+            int currentXSum = 0;
+            var numberTrackX = new HashSet<int>();
 
-            // Vertical Loop
+            int expectedTotalForY = -1;
+            var startedCountForY = false;
+            int currentYSum = 0;
+            var numberTrackY = new HashSet<int>();
+
+            // Board[x,y] where x is the row and y is the column
             for (var i = 1; i < board.GetLength(0); i++)
             {
                 for (var j = 0; j < board.GetLength(1); j++)
                 {
-                    var cell = board[j, i];
-                    if (cell.type == ECellType.Blank)
-                        continue;
-
-                    if (cell.type == ECellType.Start)
+                    // Check if the sum of the columns is accurate
+                    var cellForVertical = board[j, i];
+                    if (cellForVertical.type != ECellType.Blank)
                     {
-                        if (startedCount)
+                        
+                        if (cellForVertical.type == ECellType.Start)
                         {
-                            if (currentSum != expectedTotal)
+                            if (startedCountForX)
+                            {
+                                if (currentXSum != expectedTotalForX)
+                                    return false;
+
+                                currentXSum = 0;
+                            }
+
+                            expectedTotalForX = cellForVertical.VerticalTargetValue;
+                            startedCountForX = true;
+                        }
+                        var value = cellForVertical.value;
+                        currentXSum += value;
+
+                        if (numberTrackX.Contains(value))
+                            return false;
+
+                        numberTrackX.Add(value);
+                    
+                    }
+
+                    // Check if the sum of the rows is accurate
+                    var cellForHorizontal = board[i, j];
+
+                    if (cellForHorizontal.type != ECellType.Blank)
+                    {
+                        
+
+                        if (cellForHorizontal.type == ECellType.Start)
+                        {
+                            if (startedCountForY)
+                            {
+                                if (currentYSum != expectedTotalForY)
+                                    return false;
+
+                                currentYSum = 0;
+                            }
+
+                            expectedTotalForY = cellForHorizontal.HorizontalTargetValue;
+                            startedCountForY = true;
+                        }
+                        else
+                        {
+                            var value = cellForHorizontal.value;
+                            currentYSum += value;
+
+                            if (numberTrackY.Contains(value))
                                 return false;
 
-                            currentSum = 0;
+                            numberTrackY.Add(value);
                         }
-
-                        expectedTotal = cell.VerticalTargetValue;
-                        startedCount = true;
-                        continue;
-                    }
-
-                    if (cell.type == ECellType.Value)
-                    {
-                        currentSum += cell.value;
-                        continue;
                     }
                 }
+                numberTrackX = new HashSet<int>();
+                numberTrackY = new HashSet<int>();
             }
 
-            if (startedCount && currentSum != expectedTotal)
-            {
+            if (startedCountForX && currentXSum != expectedTotalForX)
                 return false;
-            }
+            
 
-            expectedTotal = -1;
-            startedCount = false;
-            currentSum = 0;
-
-            // Horizontal loop
-            for (var i = 1; i < board.GetLength(0); i++)
-            {
-                for (var j = 0; j < board.GetLength(1); j++)
-                {
-                    var cell = board[i, j];
-                    if (cell.type == ECellType.Blank)
-                        continue;
-
-                    if (cell.type == ECellType.Start)
-                    {
-                        if (startedCount)
-                        {
-                            if (currentSum != expectedTotal)
-                                return false;
-
-                            currentSum = 0;
-                        }
-
-                        expectedTotal = cell.HorizontalTargetValue;
-                        startedCount = true;
-                        continue;
-                    }
-
-                    if (cell.type == ECellType.Value)
-                    {
-                        currentSum += cell.value;
-                    }
-                }
-            }
-
-            if (startedCount && currentSum != expectedTotal)
-            {
+            if (startedCountForY && currentYSum != expectedTotalForY)
                 return false;
-            }
 
             return true;
         }
