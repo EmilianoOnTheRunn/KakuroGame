@@ -5,13 +5,14 @@ using Xamarin.Forms;
 using KakuroGame.Model;
 using KakuroGame.Enums;
 using System.ComponentModel;
+using System.Diagnostics;
 
 namespace KakuroGame
 {
 	[DesignTimeVisible(true)]
 	public partial class EasyLevelPage : ContentPage
-	{	
-		public EasyLevelPage ()
+	{
+        public EasyLevelPage ()
 		{
 			InitializeComponent ();
             lblTimer.BindingContext = new Clock();
@@ -36,77 +37,69 @@ namespace KakuroGame
             lblx2y0.Text = Convert.ToString(board[2, 0].HorizontalTargetValue);
             lblx2y1.Text = "";
             lblx2y2.Text = "";
-           
         }
 
-        void btnDone_Clicked(System.Object sender, System.EventArgs e)
+        async void btnDone_Clicked(System.Object sender, System.EventArgs e)
         {
-            Navigation.PopAsync();
-
-            //try
-            //{
-            //    if (!string.IsNullOrEmpty(lblTimer.Text)) {
-
-            //        if (TimeSpan.TryParse(lblTimer.Text, out TimeSpan elapsedTime)) {
-
-            //            //TimeSpan elapsedTime = TimeSpan.Parse(lblTimer.Text);
-
-            //            Clock clock = new Clock();
-            //            clock.InitializeElapsedTime(elapsedTime);
-            //            Kakuro kakuro = new Kakuro(Enums.EDifficulty.Easy);
-            //            string username = SessionManager.GetSession();
-            //            //Record record = new Record(clock, kakuro.Difficulty, username);
-
-            //            //if (RecordDBManager.SaveRecord(record))
-            //            //{
-            //            //    DisplayAlert("Success", "Record successfully saved", "Ok");
-            //            //    Navigation.PopAsync();
-            //            //}
-            //            //else
-            //            //{
-            //            //    DisplayAlert("Failed", "Failed to save the game", "Ok");
-            //            //}
-            //        }
-                    
-            //    }
-                
-            //}
-            //catch (Exception ex) {
-
-            //    DisplayAlert("Error", $"System error: {ex.Message}", "Ok");
-
-            //}
-
-        }
-
-        void lblx1y1_PropertyChanged(System.Object sender, System.ComponentModel.PropertyChangedEventArgs e)
-        {
-
-            if (sender is Entry entry && e.PropertyName == "Text")
+            
+            Game game = Game.GetInstance();
+            bool questionDisplayed = false;
+            bool loserDisplayed = false;
+            bool invalidNumber = false;
+            foreach (Entry entry in new Entry[] { lblx1y1, lblx1y2, lblx2y1, lblx2y2 })
             {
                 
                 int rowId = ValidateCells.GetRowId(entry);
                 int columnId = ValidateCells.GetColumnId(entry);
-                Game game = Game.GetInstance();
                 int value;
-                if (int.TryParse(entry.Text , out value)) {
+
+                if (int.TryParse(entry.Text, out value))
+                {
                     if (game.CheckCell(value, (rowId, columnId)))
                     {
-                        DisplayAlert("Congratulations", "You have won!", "Ok");
-                        Clock clock = lblTimer.BindingContext as Clock;
-                        if (clock != null)
+                        if (!questionDisplayed)
                         {
-                            var hour = Convert.ToInt32(clock.Hours);
-                            var minutes = Convert.ToInt32(clock.Minutes);
-                            var second = Convert.ToInt32(clock.Seconds);
-                            DateTime time = new DateTime(DateTime.Now.Year, DateTime.Now.Month, DateTime.Now.Day,
-                            hour, minutes, second);
-                            RecordDBManager.Add(time);
+                            await DisplayAlert("Congratulations", "You have won!", "Ok");
+                            bool answer = await DisplayAlert("Game Over", "Would you like to save a game", "Yes", "No");
+                            if (answer)
+                            {
+                                Clock clock = lblTimer.BindingContext as Clock;
+                                if (clock != null)
+                                {
+                                    var hour = Convert.ToInt32(clock.Hours);
+                                    var minutes = Convert.ToInt32(clock.Minutes);
+                                    var second = Convert.ToInt32(clock.Seconds);
+                                    DateTime time = new DateTime(DateTime.Now.Year, DateTime.Now.Month, DateTime.Now.Day,
+                                    hour, minutes, second);
+                                    RecordDBManager.Add(time);
+                                }
+                                await DisplayAlert("Saved Game", "You have successfully saved a record", "Ok");
+                            }
+                            questionDisplayed = true;
+                        }
+
+
+                    }
+                    else {
+                        if (!loserDisplayed)
+                        {
+                            await DisplayAlert("Oh no", "You have lost :(", "try again !_!");
+                            loserDisplayed = true;
                         }
                     }
-
+                    
+                }
+                else
+                {
+                    if (!invalidNumber)
+                    {
+                        await DisplayAlert("Error", "Please enter a valid number", "Ok");
+                        invalidNumber = true;
+                    }  
+                    
                 }
             }
+
         }
 
 
