@@ -23,7 +23,7 @@ namespace KakuroGame.Model
             return instance;
         }
 
-        public void GenerateKakuro(EDifficulty difficulty)
+        public void SetUpKakuro(EDifficulty difficulty)
         {
             kakuro = KakuroFetcher.FetchKakuro(difficulty);
         }
@@ -49,6 +49,11 @@ namespace KakuroGame.Model
             }
 
             return true;
+        }
+
+        public EDifficulty GetKakuroDifficulty()
+        {
+            return kakuro.Difficulty;
         }
     }
 }

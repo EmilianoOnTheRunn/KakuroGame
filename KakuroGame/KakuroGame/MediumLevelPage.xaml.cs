@@ -14,14 +14,14 @@ namespace KakuroGame
 		{
 			InitializeComponent ();
             lblTimer.BindingContext = new Clock();
-            PopulateValues();
+            StartGame();
         }
 
-        public void PopulateValues()
+        public void StartGame()
         {
 
             Game game = Game.GetInstance();
-            game.GenerateKakuro(EDifficulty.Medium);
+            game.SetUpKakuro(EDifficulty.Medium);
             BindingContext = game;
             var board = game.kakuro.Board;
             //Row 0

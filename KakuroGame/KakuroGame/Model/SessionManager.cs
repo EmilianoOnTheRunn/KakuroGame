@@ -8,7 +8,7 @@ namespace KakuroGame.Model
 
         
 
-		public static void SaveSesion(string username) => Preferences.Set(SessionKey, username);
+		public static void StartSession(string username) => Preferences.Set(SessionKey, username);
 
         public static string GetSession() => Preferences.Get(SessionKey, null);
 

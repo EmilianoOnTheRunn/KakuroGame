@@ -15,32 +15,36 @@ namespace KakuroGame.Model
 
         public static bool SaveRecord(Record record)
         {
-            using (SQLiteConnection con = new SQLiteConnection(App.DatabaseLocation))
+            try { 
+                using (SQLiteConnection con = new SQLiteConnection(App.DatabaseLocation))
+                {
+                    con.CreateTable<Record>();
+
+                    int rowsAffected = con.Insert(record);
+                    if (rowsAffected > 0)
+                    {
+                        return true;
+                    }
+                    else
+                    {
+                        return false;
+                    }
+                }
+            } catch
             {
-                con.CreateTable<Record>();
-
-                int rowsAffected = con.Insert(record);
-                if (rowsAffected > 0)
-                {
-                    return true;
-                }
-                else
-                {
-                    return false;
-                }
+                return false;
             }
-
         }
 
 
         public static bool Add(DateTime time)
         {
             Game game = Game.GetInstance();
-            var kakuro = game.kakuro;
+            var difficulty = game.GetKakuroDifficulty();
 
             var user = SessionManager.GetSession();
 
-            Record record = new Record(time, kakuro.Difficulty, user);
+            Record record = new Record(time, difficulty, user);
             return SaveRecord(record);
         }
 
@@ -54,6 +58,15 @@ namespace KakuroGame.Model
             }
         }
 
+        public static void DeleteUserRecord(string username)
+        {
+            using (SQLiteConnection con = new SQLiteConnection(App.DatabaseLocation))
+            {
+                con.CreateTable<Record>();
+                var records = con.Table<Record>().ToList();
+                con.Delete(records.Where(s => s.Username == username.ToString()).ToList());
+            }
+        }
     }
 }
 

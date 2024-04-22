@@ -16,14 +16,14 @@ namespace KakuroGame
 		{
 			InitializeComponent ();
             lblTimer.BindingContext = new Clock();
-            PopulateValues();
+            StartGame();
             
         }
 
-        public void PopulateValues() {
+        public void StartGame() {
 
             Game game = Game.GetInstance();
-            game.GenerateKakuro(EDifficulty.Easy);
+            game.SetUpKakuro(EDifficulty.Easy);
             BindingContext = game;
             var board = game.kakuro.Board;
             //Row 0
@@ -57,9 +57,11 @@ namespace KakuroGame
                         var second = Convert.ToInt32(clock.Seconds);
                         DateTime time = new DateTime(DateTime.Now.Year, DateTime.Now.Month, DateTime.Now.Day,
                         hour, minutes, second);
-                        RecordDBManager.Add(time);
+                        if (RecordDBManager.Add(time))
+                            await DisplayAlert("Saved Game", "You have successfully saved a record", "Ok");
+                        else
+                            await DisplayAlert("Error", "The record couldn't be saved", "Ok");
                     }
-                    await DisplayAlert("Saved Game", "You have successfully saved a record", "Ok");
                 }
 
             }

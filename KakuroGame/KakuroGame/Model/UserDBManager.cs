@@ -67,24 +67,33 @@ namespace KakuroGame.Model
             {
                 User userToDelete = con.Table<User>().FirstOrDefault(u => u.Username == username);
                 con.CreateTable<User>();
+
+                RecordDBManager.DeleteUserRecord(username);
+
                 int row = con.Delete(userToDelete);
                 con.Close();
             }
         }
 
-        public static bool SaveUser(User user)
+        public static (bool success, string message) SaveUser(User user)
         {
+            if (!AvailableUsername(user.Username))
+            {
+
+                return (false, "The username inserted is already in use");
+            }
+
             using (SQLiteConnection con = new SQLiteConnection(App.DatabaseLocation))
             {
                 con.CreateTable<User>();
                 int rowsAffected = con.Insert(user);
                 if (rowsAffected > 0)
                 {
-                    return true;
+                    return (true, "The user was succesfully registered");
                 }
                 else
                 {
-                    return false;
+                    return (false, "Failed to register the user");
                 }
             }
         }
@@ -96,10 +105,10 @@ namespace KakuroGame.Model
                 User user = con.Table<User>().FirstOrDefault(u => u.Username == username);
 
                 if (user != null)
-                    return true;
+                    return false;
             }
 
-            return false;
+            return true;
         }
 	}
 }
