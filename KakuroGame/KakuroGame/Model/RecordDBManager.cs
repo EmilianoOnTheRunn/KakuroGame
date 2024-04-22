@@ -64,7 +64,10 @@ namespace KakuroGame.Model
             {
                 con.CreateTable<Record>();
                 var records = con.Table<Record>().ToList();
-                con.Delete(records.Where(s => s.Username == username.ToString()).ToList());
+                foreach (var record in records.Where(s => s.Username == username.ToString()).ToList())
+                {
+                    con.Delete(record);
+                }
             }
         }
     }
