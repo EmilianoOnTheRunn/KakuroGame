@@ -32,14 +32,13 @@ namespace KakuroGame
             {
                 try
                 {
-                    UserDBManager.RequestDeleteUser(username);
+                    UserDBManager.RequestDeleteUser();
                     await DisplayAlert("Success", "User deleted", "Ok");
-                    Navigation.PopAsync();
+                    await Navigation.PopAsync();
                 }
                 catch (Exception ex)
                 {
                     await DisplayAlert("Error", "There's was an error deleting the user: " + ex, "Ok");
-                    Navigation.PopAsync();
                 }
             }
 

@@ -46,12 +46,11 @@ namespace KakuroGame.Model
 
         public async static Task<List<Record>> GetRecords(string username)
         {
-            using (SQLiteConnection con = new SQLiteConnection("hello"))
+            using (SQLiteConnection con = new SQLiteConnection(App.DatabaseLocation))
             {
-                //con.CreateTable<Record>();
+                con.CreateTable<Record>();
                 var records = con.Table<Record>().ToList();
                 return records.Where(s => s.Username == username.ToString()).ToList();
-;
             }
         }
 

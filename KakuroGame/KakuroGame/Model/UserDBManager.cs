@@ -38,43 +38,37 @@ namespace KakuroGame.Model
                     user1.Password = hashedPassword;
                     int row = con.Update(user1);
                     con.Close();
-                    /*if (row > 0)
-                    {
-                        DisplayAlert("Success", "Data updated", "Ok");
-                        Navigation.PopAsync();
-                    }
-                    else
-                    {
-                        DisplayAlert("Failed", "Check again", "Ok");
-                    }
-                    
-                }
-                else
-                {
-                    DisplayAlert("Failed", "Invalid username", "Ok");
-                    */
                 }
             }
         }
 
-        public static void RequestDeleteUser(string user)
+        public static void ChangeUserPassword(string newPassword)
         {
+            var username = SessionManager.GetSession();
             using (SQLiteConnection con = new SQLiteConnection(App.DatabaseLocation))
             {
-                User userToDelete = con.Table<User>().FirstOrDefault(u => u.Username == user);
-                //lblPassword.Text = user.Password;
+
+                User user1 = con.Table<User>().FirstOrDefault(u => u.Username == username);
+                if (user1 != null)
+                {
+                    string hashedPassword = User.HashPassword(newPassword);
+
+                    user1.Password = hashedPassword;
+                    int row = con.Update(user1);
+                    con.Close();
+                }
+            }
+        }
+
+        public static void RequestDeleteUser()
+        {
+            var username = SessionManager.GetSession();
+            using (SQLiteConnection con = new SQLiteConnection(App.DatabaseLocation))
+            {
+                User userToDelete = con.Table<User>().FirstOrDefault(u => u.Username == username);
                 con.CreateTable<User>();
                 int row = con.Delete(userToDelete);
                 con.Close();
-                /*if (row > 0)
-                {
-                    DisplayAlert("Success", "User deleted", "Ok");
-                    Navigation.PopAsync();
-                }
-                else
-                {
-                    DisplayAlert("Failed", "Check again", "Ok");
-                }*/
             }
         }
 
