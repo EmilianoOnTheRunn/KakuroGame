@@ -20,7 +20,7 @@ namespace KakuroGame
 
         void btnEdit_Clicked(System.Object sender, System.EventArgs e)
         {
-            Navigation.PushAsync(new PasswordPage());
+            Navigation.PushAsync(new ChangePassword());
         }
 
         async void btnDelete_Clicked(System.Object sender, System.EventArgs e)
