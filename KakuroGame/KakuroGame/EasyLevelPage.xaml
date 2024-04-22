@@ -69,7 +69,7 @@
                         <Frame Style="{StaticResource FrameGame}" Grid.Row="1"
                                  Grid.Column="1">
                             <StackLayout>
-                                <Entry Placeholder="" Style="{StaticResource Input3x3}" x:Name="lblx1y1" local:ValidateCells.RowId="1" local:ValidateCells.ColumnId="1" />
+                                <Entry Placeholder="" Style="{StaticResource Input3x3}" x:Name="lblx1y1" local:ValidateCells.RowId="1" local:ValidateCells.ColumnId="1" PropertyChanged="CellValueChange_PropertyChanged"/>
                             </StackLayout>
                         </Frame>
 

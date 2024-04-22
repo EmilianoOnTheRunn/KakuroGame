@@ -1,4 +1,7 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
 using KakuroGame.Enums;
 using SQLite;
 
@@ -39,6 +42,17 @@ namespace KakuroGame.Model
 
             Record record = new Record(time, kakuro.Difficulty, user);
             return SaveRecord(record);
+        }
+
+        public async static Task<List<Record>> GetRecords(string username)
+        {
+            using (SQLiteConnection con = new SQLiteConnection("hello"))
+            {
+                //con.CreateTable<Record>();
+                var records = con.Table<Record>().ToList();
+                return records.Where(s => s.Username == username.ToString()).ToList();
+;
+            }
         }
 
     }

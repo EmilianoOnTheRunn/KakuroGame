@@ -45,10 +45,35 @@ namespace KakuroGame
             lblx3y3.Text = "";
         }
 
-        void btnDone_Clicked(System.Object sender, System.EventArgs e)
+        async void btnDone_Clicked(System.Object sender, System.EventArgs e)
         {
-            Navigation.PopAsync();
+            Game game = Game.GetInstance();
+
+            if (game.ValidateKakuro())
+            {
+                await DisplayAlert("Congratulations", "You have won!", "Ok");
+                bool answer = await DisplayAlert("Game Over", "Would you like to save a game", "Yes", "No");
+                if (answer)
+                {
+                    Clock clock = lblTimer.BindingContext as Clock;
+                    if (clock != null)
+                    {
+                        var hour = Convert.ToInt32(clock.Hours);
+                        var minutes = Convert.ToInt32(clock.Minutes);
+                        var second = Convert.ToInt32(clock.Seconds);
+                        DateTime time = new DateTime(DateTime.Now.Year, DateTime.Now.Month, DateTime.Now.Day,
+                        hour, minutes, second);
+                        RecordDBManager.Add(time);
+                    }
+                    await DisplayAlert("Saved Game", "You have successfully saved a record", "Ok");
+                }
+            }
+            else
+            {
+                await DisplayAlert("Sorry, the kakuro isn't solve", "Try changing the values and then you can evaluate again", "Ok");
+            }
         }
+            
 
 
 
@@ -60,24 +85,14 @@ namespace KakuroGame
                 int rowId = ValidateCells.GetRowId(entry);
                 int columnId = ValidateCells.GetColumnId(entry);
                 Game game = Game.GetInstance();
-                int value;
-                if (int.TryParse(entry.Text, out value))
-                {
-                    if (game.CheckCell(value, (rowId, columnId)))
-                    {
-                        DisplayAlert("Congratulations", "You have won!", "Ok");
-                        Clock clock = lblTimer.BindingContext as Clock;
-                        if (clock != null)
-                        {
-                            var hour = Convert.ToInt32(clock.Hours);
-                            var minutes = Convert.ToInt32(clock.Minutes);
-                            var second = Convert.ToInt32(clock.Seconds);
-                            DateTime time = new DateTime(DateTime.Now.Year, DateTime.Now.Month, DateTime.Now.Day,
-                            hour, minutes, second);
-                            RecordDBManager.Add(time);
-                        }
-                    }
 
+                if (int.TryParse(entry.Text, out var value))
+                {
+                    game.CheckCell(value, (rowId, columnId));
+                }
+                else if (entry.Text != "")
+                {
+                    DisplayAlert("Error", "Please enter a valid number", "Ok");
                 }
             }
         }

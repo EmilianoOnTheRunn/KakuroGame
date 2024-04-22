@@ -41,67 +41,54 @@ namespace KakuroGame
 
         async void btnDone_Clicked(System.Object sender, System.EventArgs e)
         {
-            
             Game game = Game.GetInstance();
-            bool questionDisplayed = false;
-            bool loserDisplayed = false;
-            bool invalidNumber = false;
-            foreach (Entry entry in new Entry[] { lblx1y1, lblx1y2, lblx2y1, lblx2y2 })
-            {
-                
-                int rowId = ValidateCells.GetRowId(entry);
-                int columnId = ValidateCells.GetColumnId(entry);
-                int value;
-
-                if (int.TryParse(entry.Text, out value))
+            
+            if (game.ValidateKakuro())
+            {      
+                await DisplayAlert("Congratulations", "You have won!", "Ok");
+                bool answer = await DisplayAlert("Game Over", "Would you like to save a game", "Yes", "No");
+                if (answer)
                 {
-                    if (game.CheckCell(value, (rowId, columnId)))
+                    Clock clock = lblTimer.BindingContext as Clock;
+                    if (clock != null)
                     {
-                        if (!questionDisplayed)
-                        {
-                            await DisplayAlert("Congratulations", "You have won!", "Ok");
-                            bool answer = await DisplayAlert("Game Over", "Would you like to save a game", "Yes", "No");
-                            if (answer)
-                            {
-                                Clock clock = lblTimer.BindingContext as Clock;
-                                if (clock != null)
-                                {
-                                    var hour = Convert.ToInt32(clock.Hours);
-                                    var minutes = Convert.ToInt32(clock.Minutes);
-                                    var second = Convert.ToInt32(clock.Seconds);
-                                    DateTime time = new DateTime(DateTime.Now.Year, DateTime.Now.Month, DateTime.Now.Day,
-                                    hour, minutes, second);
-                                    RecordDBManager.Add(time);
-                                }
-                                await DisplayAlert("Saved Game", "You have successfully saved a record", "Ok");
-                            }
-                            questionDisplayed = true;
-                        }
-
-
+                        var hour = Convert.ToInt32(clock.Hours);
+                        var minutes = Convert.ToInt32(clock.Minutes);
+                        var second = Convert.ToInt32(clock.Seconds);
+                        DateTime time = new DateTime(DateTime.Now.Year, DateTime.Now.Month, DateTime.Now.Day,
+                        hour, minutes, second);
+                        RecordDBManager.Add(time);
                     }
-                    else {
-                        if (!loserDisplayed)
-                        {
-                            await DisplayAlert("Oh no", "You have lost :(", "try again !_!");
-                            loserDisplayed = true;
-                        }
-                    }
-                    
+                    await DisplayAlert("Saved Game", "You have successfully saved a record", "Ok");
                 }
-                else
-                {
-                    if (!invalidNumber)
-                    {
-                        await DisplayAlert("Error", "Please enter a valid number", "Ok");
-                        invalidNumber = true;
-                    }  
-                    
-                }
+
             }
-
+            else
+            {
+                await DisplayAlert("Sorry, the kakuro isn't solve", "Try changing the values and then you can evaluate again", "Ok");
+            }
         }
 
+        void CellValueChange_PropertyChanged(System.Object sender, System.ComponentModel.PropertyChangedEventArgs e)
+        {
+            if (sender is Entry entry && e.PropertyName == "Text")
+            {
+
+                Game game = Game.GetInstance();
+
+                int rowID = ValidateCells.GetRowId(entry);
+                int columnID = ValidateCells.GetColumnId(entry);
+                
+                if (int.TryParse(entry.Text, out var value))
+                {
+                    game.CheckCell(value, (rowID, columnID));
+                }
+                else if (entry.Text != "")
+                {
+                    DisplayAlert("Error", "Please enter a valid number", "Ok");
+                }
+            }
+        }
 
     }
 }

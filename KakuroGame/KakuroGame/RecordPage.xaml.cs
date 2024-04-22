@@ -15,14 +15,23 @@ namespace KakuroGame
 
 		}
 
-        protected override void OnAppearing()
+        protected override async void OnAppearing()
         {
             base.OnAppearing();
-            using (SQLiteConnection con = new SQLiteConnection(App.DatabaseLocation))
+
+            var username = SessionManager.GetSession();
+            try { 
+                var records = await RecordDBManager.GetRecords(username);
+
+                if (records == null)
+                {
+                    await DisplayAlert("Error", "There was an unexpected problem with the database, try again later", "Ok");
+                }
+                else
+                    recordListView.ItemsSource = records;
+            } catch
             {
-                con.CreateTable<Record>();
-                var records = con.Table<Record>().ToList();
-                recordListView.ItemsSource = records.Where(s => s.Username == SessionManager.GetSession());
+                await DisplayAlert("Error", "Couldn't connect to the database", "Ok");
             }
         }
 
