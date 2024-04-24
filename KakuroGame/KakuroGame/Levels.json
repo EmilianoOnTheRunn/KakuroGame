@@ -618,7 +618,7 @@
           "value": 0,
           "expectedValue": 0,
           "HorizontalTargetValue": 0,
-          "VerticalTargetValue": 12
+          "VerticalTargetValue": 17
         },
         {
           "type": 1,
@@ -647,8 +647,15 @@
           "type": 1,
           "value": 0,
           "expectedValue": 0,
-          "HorizontalTargetValue": 12,
-          "VerticalTargetValue": 16
+          "HorizontalTargetValue": 16,
+          "VerticalTargetValue": 13
+        },
+        {
+          "type": 2,
+          "value": 0,
+          "expectedValue": 7,
+          "HorizontalTargetValue": 0,
+          "VerticalTargetValue": 0
         },
         {
           "type": 2,
@@ -658,18 +665,48 @@
           "VerticalTargetValue": 0
         },
         {
+          "type": 1,
+          "value": 0,
+          "expectedValue": 0,
+          "HorizontalTargetValue": 0,
+          "VerticalTargetValue": 12
+        }
+      ],
+      [
+        {
+          "type": 1,
+          "value": 0,
+          "expectedValue": 0,
+          "HorizontalTargetValue": 11,
+          "VerticalTargetValue": 0
+        },
+        {
+          "type": 2,
+          "value": 0,
+          "expectedValue": 5,
+          "HorizontalTargetValue": 0,
+          "VerticalTargetValue": 0
+        },
+        {
+          "type": 2,
+          "value": 0,
+          "expectedValue": 1,
+          "HorizontalTargetValue": 0,
+          "VerticalTargetValue": 0
+        },
+        {
+          "type": 2,
+          "value": 0,
+          "expectedValue": 2,
+          "HorizontalTargetValue": 0,
+          "VerticalTargetValue": 0
+        },
+        {
           "type": 2,
           "value": 0,
           "expectedValue": 3,
           "HorizontalTargetValue": 0,
           "VerticalTargetValue": 0
-        },
-        {
-          "type": 1,
-          "value": 0,
-          "expectedValue": 0,
-          "HorizontalTargetValue": 0,
-          "VerticalTargetValue": 6
         }
       ],
       [
@@ -690,58 +727,21 @@
         {
           "type": 2,
           "value": 0,
-          "expectedValue": 5,
+          "expectedValue": 3,
           "HorizontalTargetValue": 0,
           "VerticalTargetValue": 0
         },
         {
           "type": 2,
           "value": 0,
-          "expectedValue": 2,
+          "expectedValue": 6,
           "HorizontalTargetValue": 0,
-          "VerticalTargetValue": 0
-        },
-        {
-          "type": 2,
-          "value": 0,
-          "expectedValue": 1,
-          "HorizontalTargetValue": 0,
-          "VerticalTargetValue": 0
-        }
-      ],
-      [
-        {
-          "type": 1,
-          "value": 0,
-          "expectedValue": 0,
-          "HorizontalTargetValue": 13,
           "VerticalTargetValue": 0
         },
         {
           "type": 2,
           "value": 0,
           "expectedValue": 9,
-          "HorizontalTargetValue": 0,
-          "VerticalTargetValue": 0
-        },
-        {
-          "type": 2,
-          "value": 0,
-          "expectedValue": 7,
-          "HorizontalTargetValue": 0,
-          "VerticalTargetValue": 0
-        },
-        {
-          "type": 2,
-          "value": 0,
-          "expectedValue": 4,
-          "HorizontalTargetValue": 0,
-          "VerticalTargetValue": 0
-        },
-        {
-          "type": 2,
-          "value": 0,
-          "expectedValue": 3,
           "HorizontalTargetValue": 0,
           "VerticalTargetValue": 0
         }
@@ -758,20 +758,20 @@
           "type": 1,
           "value": 0,
           "expectedValue": 0,
-          "HorizontalTargetValue": 7,
+          "HorizontalTargetValue": 14,
           "VerticalTargetValue": 0
         },
         {
           "type": 2,
           "value": 0,
-          "expectedValue": 8,
+          "expectedValue": 6,
           "HorizontalTargetValue": 0,
           "VerticalTargetValue": 0
         },
         {
           "type": 2,
           "value": 0,
-          "expectedValue": 1,
+          "expectedValue": 8,
           "HorizontalTargetValue": 0,
           "VerticalTargetValue": 0
         },

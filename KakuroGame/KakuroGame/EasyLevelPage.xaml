@@ -77,7 +77,7 @@
                         <Frame Style="{StaticResource FrameGame}" Grid.Row="1"
                                  Grid.Column="2">
                             <StackLayout>
-                                <Entry Placeholder="" Style="{StaticResource Input3x3}" x:Name="lblx1y2" local:ValidateCells.RowId="1" local:ValidateCells.ColumnId="2" />
+                                <Entry Placeholder="" Style="{StaticResource Input3x3}" x:Name="lblx1y2" local:ValidateCells.RowId="1" local:ValidateCells.ColumnId="2" PropertyChanged="CellValueChange_PropertyChanged"/>
                             </StackLayout>
                         </Frame>
 
@@ -93,13 +93,13 @@
 
                         <Frame Style="{StaticResource FrameGame}" Grid.Row="2" Grid.Column="1">
                             <StackLayout>
-                                <Entry Placeholder="" Style="{StaticResource Input3x3}" x:Name="lblx2y1" local:ValidateCells.RowId="2" local:ValidateCells.ColumnId="1" />
+                                <Entry Placeholder="" Style="{StaticResource Input3x3}" x:Name="lblx2y1" local:ValidateCells.RowId="2" local:ValidateCells.ColumnId="1" PropertyChanged="CellValueChange_PropertyChanged"/>
                             </StackLayout>
                         </Frame>                    
 
                         <Frame Style="{StaticResource FrameGame}" Grid.Row="2" Grid.Column="2">
                             <StackLayout>
-                                <Entry Placeholder="" Style="{StaticResource Input3x3}" x:Name="lblx2y2" local:ValidateCells.RowId="2" local:ValidateCells.ColumnId="2" />
+                                <Entry Placeholder="" Style="{StaticResource Input3x3}" x:Name="lblx2y2" local:ValidateCells.RowId="2" local:ValidateCells.ColumnId="2" PropertyChanged="CellValueChange_PropertyChanged"/>
                             </StackLayout>
                         </Frame>
 
