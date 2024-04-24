@@ -20,7 +20,7 @@ namespace KakuroGame
 
         void btnEdit_Clicked(System.Object sender, System.EventArgs e)
         {
-            Navigation.PushAsync(new PasswordPage());
+            Navigation.PushAsync(new ChangePassword());
         }
 
         async void btnDelete_Clicked(System.Object sender, System.EventArgs e)
@@ -32,14 +32,13 @@ namespace KakuroGame
             {
                 try
                 {
-                    UserDBManager.RequestDeleteUser(username);
+                    UserDBManager.RequestDeleteUser();
                     await DisplayAlert("Success", "User deleted", "Ok");
-                    Navigation.PopAsync();
+                    await Navigation.PopAsync();
                 }
                 catch (Exception ex)
                 {
                     await DisplayAlert("Error", "There's was an error deleting the user: " + ex, "Ok");
-                    Navigation.PopAsync();
                 }
             }
 

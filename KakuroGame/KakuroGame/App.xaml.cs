@@ -1,6 +1,11 @@
 ﻿using System;
+using KakuroGame.Model;
+using Newtonsoft.Json;
+using System.Collections.Generic;
+using System.IO;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
+using System.Net.Http;
 
 namespace KakuroGame
 {

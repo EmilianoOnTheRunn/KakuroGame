@@ -10,17 +10,13 @@
         <Frame Style="{StaticResource Background}">
 
             <StackLayout Margin="0,0,0,0">
-
-                <StackLayout  Margin="0,40,104,0">
-
-                    <Frame Style="{StaticResource Bubble1}">  
-                        <Label Text="Welcome to the Kakuro Game"  Style="{StaticResource Titles}"/>
-                    </Frame>
-
-                </StackLayout>
                 
-                <StackLayout Margin="0,100,0,0">
-                    <Label Style="{StaticResource Titles}" FontSize="29" HorizontalTextAlignment="Center">
+                <StackLayout VerticalOptions="CenterAndExpand">
+                    <Frame Style="{StaticResource Bubble1}" Margin="0,0,104,0">  
+                           <Label Text="Welcome to Kakuro Kingdom" Style="{StaticResource Titles}" FontSize="28"/>
+                     </Frame>
+
+                    <Label Style="{StaticResource Titles}" FontSize="29" HorizontalTextAlignment="Center" Margin="0,80,0,0">
                         <Label.FormattedText>
                             <FormattedString>
                                 <Span Text="Please enter your information" />
@@ -31,7 +27,7 @@
                     </Label>        
                 </StackLayout>
 
-                <StackLayout VerticalOptions="Center" Margin="0,100,0,0">
+                <StackLayout VerticalOptions="Center" Margin="0,0,0,0">
 
                     <Frame Style="{StaticResource Bubble2}">  
                         <Entry Placeholder="Username" Style="{StaticResource Inputs}" x:Name="userNameEntry"/>

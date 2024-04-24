@@ -31,9 +31,8 @@ namespace KakuroGame
                     var user = UserDBManager.RequestUser(username, password);
                     if (user != null) { 
                     
-                        SessionManager.SaveSesion(user.Username);
+                        SessionManager.StartSession(user.Username);
 
-                        DisplayAlert("Success", "User successfully logged in", "Ok");
                         userNameEntry.Text = "";
                         passwordEntry.Text = "";
                         Navigation.PushAsync(new HomePage());
@@ -44,9 +43,9 @@ namespace KakuroGame
                     }
                 }
 
-                catch (Exception ex)
+                catch
                 {
-                    DisplayAlert("Error", $"System error: {ex.Message}", "Ok");
+                    DisplayAlert("Error", $"Unexpected error when connecting to the database", "Ok");
                 }
             }
             else

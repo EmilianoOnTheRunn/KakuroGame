@@ -6,9 +6,9 @@ namespace KakuroGame.Model
 	{
 		private const string SessionKey = "1234567890";
 
-        //TODO: Store the current user in this class
+        
 
-		public static void SaveSesion(string username) => Preferences.Set(SessionKey, username);
+		public static void StartSession(string username) => Preferences.Set(SessionKey, username);
 
         public static string GetSession() => Preferences.Get(SessionKey, null);
 

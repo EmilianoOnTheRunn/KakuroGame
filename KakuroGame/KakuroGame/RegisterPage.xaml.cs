@@ -24,7 +24,6 @@ namespace KakuroGame
             bool isUsernameEmpty = string.IsNullOrEmpty(username);
             bool isPassEmpty = string.IsNullOrEmpty(password);
 
-            //TODO: Move the input validation to InputValidation class
             if (!isUsernameEmpty && !isPassEmpty && password == confirmPassword)
             {
 
@@ -38,27 +37,22 @@ namespace KakuroGame
                         Password = hashedPassword
                     };
 
-                    if (UserDBManager.AvailableUsername(user.Username))
-                    {
+                    var result = UserDBManager.SaveUser(user);
 
-                        DisplayAlert("Failed", "This username is already in use", "Ok");
-                        return;
-                    }
-
-                    if (UserDBManager.SaveUser(user))
+                    if (result.success)
                     {
-                        DisplayAlert("Success", "User successfully registered", "Ok");
+                        DisplayAlert("Success", result.message, "Ok");
                         Navigation.PopAsync();
                     }
                     else
                     {
-                        DisplayAlert("Failed", "Failed to register user", "Ok");
+                        DisplayAlert("Failed", result.message, "Ok");
                     }
                     
                 }
-                catch (Exception ex)
+                catch
                 {
-                    DisplayAlert("Error", $"System error: {ex.Message}", "Ok");
+                    DisplayAlert("Error", $"There was an error connecting to the database. Try again later", "Ok");
                 }
             }
             else

@@ -2,7 +2,8 @@
 <ContentPage
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-    x:Class="KakuroGame.EasyLevelPage">
+    x:Class="KakuroGame.EasyLevelPage"
+    xmlns:local="clr-namespace:KakuroGame.Model">
 
  <StackLayout>
 
@@ -11,7 +12,7 @@
             <StackLayout>
 
                 <StackLayout  >
-                    <Label Text="Easy Level" Style="{StaticResource labelIcon}" FontAttributes="Bold" Margin="0,60,0,0"/>        
+                    <Label Text="Easy Level" Style="{StaticResource labelIcon}" FontAttributes="Bold" Margin="0,0,0,0"/>        
                 </StackLayout>
 
                 
@@ -19,7 +20,7 @@
                     <Frame Style="{StaticResource Bubble3x3}">
                     <StackLayout>
                     <Grid RowSpacing="0"
-                          ColumnSpacing="0">
+                          ColumnSpacing="0" x:Name="KakuroGrid">
                         <Grid.RowDefinitions>
                             <RowDefinition />
                             <RowDefinition />
@@ -43,14 +44,14 @@
                         <Frame Style="{StaticResource FrameGame}" Grid.Column="1">
                              <StackLayout>
                                 <BoxView Style="{StaticResource diagonalLineTop3x3}"/>
-                                <Label Text="7" Margin="40,0,0,20" TextColor="White"/>
-                            </StackLayout>
+                                <Label Text="" Margin="40,0,0,20" TextColor="White" x:Name="lblx0y1" local:ValidateCells.RowId="0" local:ValidateCells.ColumnId="1" />
+                            </StackLayout> 
                         </Frame>
 
                         <Frame Style="{StaticResource FrameGame}" Grid.Column="2">
                              <StackLayout>
                                 <BoxView Style="{StaticResource diagonalLineTop3x3}"/>
-                                <Label Text="4" Margin="40,0,0,20" TextColor="White"/>
+                                <Label Text="" Margin="40,0,0,20" TextColor="White" x:Name="lblx0y2" local:ValidateCells.RowId="0" local:ValidateCells.ColumnId="2"/>
                             </StackLayout>
                         </Frame>
 
@@ -60,7 +61,7 @@
 
                         <Frame Style="{StaticResource FrameGame}" Grid.Row="1">
                              <StackLayout>
-                                <Label Text="8" Margin="80,30,0,0" TextColor="White"/>
+                                <Label Text="" Margin="80,30,0,0" TextColor="White" x:Name="lblx1y0"/>
                                 <BoxView Style="{StaticResource diagonalLineLeft3x3}" />
                             </StackLayout>
                         </Frame>
@@ -68,7 +69,7 @@
                         <Frame Style="{StaticResource FrameGame}" Grid.Row="1"
                                  Grid.Column="1">
                             <StackLayout>
-                                <Entry Placeholder="5" Style="{StaticResource Input3x3}"/>
+                                <Entry Placeholder="" Style="{StaticResource Input3x3}" x:Name="lblx1y1" local:ValidateCells.RowId="1" local:ValidateCells.ColumnId="1" PropertyChanged="CellValueChange_PropertyChanged"/>
                             </StackLayout>
                         </Frame>
 
@@ -76,7 +77,7 @@
                         <Frame Style="{StaticResource FrameGame}" Grid.Row="1"
                                  Grid.Column="2">
                             <StackLayout>
-                                <Entry Text="3" Style="{StaticResource Input3x3}"/>
+                                <Entry Placeholder="" Style="{StaticResource Input3x3}" x:Name="lblx1y2" local:ValidateCells.RowId="1" local:ValidateCells.ColumnId="2" PropertyChanged="CellValueChange_PropertyChanged"/>
                             </StackLayout>
                         </Frame>
 
@@ -85,20 +86,20 @@
 
                         <Frame Style="{StaticResource FrameGame}" Grid.Row="2">
                              <StackLayout>
-                                <Label Text="3" Margin="80,30,0,0" TextColor="White"/>
+                                <Label Text="" Margin="80,30,0,0" TextColor="White" x:Name="lblx2y0" local:ValidateCells.RowId="2" local:ValidateCells.ColumnId="0"/>
                                 <BoxView Style="{StaticResource diagonalLineLeft3x3}" />
                             </StackLayout>
                         </Frame>
 
                         <Frame Style="{StaticResource FrameGame}" Grid.Row="2" Grid.Column="1">
                             <StackLayout>
-                                <Entry Text="2" Style="{StaticResource Input3x3}"/>
+                                <Entry Placeholder="" Style="{StaticResource Input3x3}" x:Name="lblx2y1" local:ValidateCells.RowId="2" local:ValidateCells.ColumnId="1" PropertyChanged="CellValueChange_PropertyChanged"/>
                             </StackLayout>
                         </Frame>                    
 
                         <Frame Style="{StaticResource FrameGame}" Grid.Row="2" Grid.Column="2">
                             <StackLayout>
-                                <Entry Text="1" Style="{StaticResource Input3x3}"/>
+                                <Entry Placeholder="" Style="{StaticResource Input3x3}" x:Name="lblx2y2" local:ValidateCells.RowId="2" local:ValidateCells.ColumnId="2" PropertyChanged="CellValueChange_PropertyChanged"/>
                             </StackLayout>
                         </Frame>
 
@@ -108,8 +109,33 @@
                     </Frame> 
                     <StackLayout Orientation="Horizontal">
                         <Label Text="3x3" Style="{StaticResource labelIcon}" HorizontalOptions="Start" Margin="10"/>
-                        <Label Text="0:12" Style="{StaticResource labelIcon}" HorizontalOptions="EndAndExpand" Margin="10"/>
+                        <Label Style="{StaticResource labelIcon}"  HorizontalOptions="EndAndExpand" Margin="10" x:Name="lblTimer">
+                            <Label.FormattedText>
+                                <FormattedString>
+                                    <Span Text="{Binding Hours}" />
+                                    <Span Text="h:"/>
+                                    <Span Text="{Binding Minutes}" />
+                                    <Span Text="m:"/>
+                                    <Span Text="{Binding Seconds}" />
+                                    <Span Text="s"/>
+                                </FormattedString>
+                            </Label.FormattedText>
+                        </Label>
                     </StackLayout>
+
+                    <!--<StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand">
+                        <Button Text="1" Style="{StaticResource btnNumbers3x3}"/>
+                        <Button Text="2" Style="{StaticResource btnNumbers3x3}"/>
+                        <Button Text="3" Style="{StaticResource btnNumbers3x3}"/>
+                        <Button Text="4" Style="{StaticResource btnNumbers3x3}"/>
+                        <Button Text="5" Style="{StaticResource btnNumbers3x3}"/>
+                        <Button Text="6" Style="{StaticResource btnNumbers3x3}"/>
+                        <Button Text="7" Style="{StaticResource btnNumbers3x3}"/>
+                        <Button Text="8" Style="{StaticResource btnNumbers3x3}"/>
+                        <Button Text="9" Style="{StaticResource btnNumbers3x3}"/>
+                        <Button Text="X" Style="{StaticResource btnNumbers3x3}"/>
+                    </StackLayout>
+                    -->
                     <Button Text="Done" Style="{StaticResource buttons}" x:Name="btnDone" Clicked="btnDone_Clicked"/>
 
 

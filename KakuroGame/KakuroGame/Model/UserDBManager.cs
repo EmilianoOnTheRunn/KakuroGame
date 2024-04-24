@@ -38,59 +38,62 @@ namespace KakuroGame.Model
                     user1.Password = hashedPassword;
                     int row = con.Update(user1);
                     con.Close();
-                    /*if (row > 0)
-                    {
-                        DisplayAlert("Success", "Data updated", "Ok");
-                        Navigation.PopAsync();
-                    }
-                    else
-                    {
-                        DisplayAlert("Failed", "Check again", "Ok");
-                    }
-                    
-                }
-                else
-                {
-                    DisplayAlert("Failed", "Invalid username", "Ok");
-                    */
                 }
             }
         }
 
-        public static void RequestDeleteUser(string user)
+        public static void ChangeUserPassword(string newPassword)
         {
+            var username = SessionManager.GetSession();
             using (SQLiteConnection con = new SQLiteConnection(App.DatabaseLocation))
             {
-                User userToDelete = con.Table<User>().FirstOrDefault(u => u.Username == user);
-                //lblPassword.Text = user.Password;
-                con.CreateTable<User>();
-                int row = con.Delete(userToDelete);
-                con.Close();
-                /*if (row > 0)
+
+                User user1 = con.Table<User>().FirstOrDefault(u => u.Username == username);
+                if (user1 != null)
                 {
-                    DisplayAlert("Success", "User deleted", "Ok");
-                    Navigation.PopAsync();
+                    string hashedPassword = User.HashPassword(newPassword);
+
+                    user1.Password = hashedPassword;
+                    int row = con.Update(user1);
+                    con.Close();
                 }
-                else
-                {
-                    DisplayAlert("Failed", "Check again", "Ok");
-                }*/
             }
         }
 
-        public static bool SaveUser(User user)
+        public static void RequestDeleteUser()
         {
+            var username = SessionManager.GetSession();
+            using (SQLiteConnection con = new SQLiteConnection(App.DatabaseLocation))
+            {
+                User userToDelete = con.Table<User>().FirstOrDefault(u => u.Username == username);
+                con.CreateTable<User>();
+
+                RecordDBManager.DeleteUserRecord(username);
+
+                int row = con.Delete(userToDelete);
+                con.Close();
+            }
+        }
+
+        public static (bool success, string message) SaveUser(User user)
+        {
+            if (!AvailableUsername(user.Username))
+            {
+
+                return (false, "The username inserted is already in use");
+            }
+
             using (SQLiteConnection con = new SQLiteConnection(App.DatabaseLocation))
             {
                 con.CreateTable<User>();
                 int rowsAffected = con.Insert(user);
                 if (rowsAffected > 0)
                 {
-                    return true;
+                    return (true, "The user was succesfully registered");
                 }
                 else
                 {
-                    return false;
+                    return (false, "Failed to register the user");
                 }
             }
         }
@@ -102,10 +105,10 @@ namespace KakuroGame.Model
                 User user = con.Table<User>().FirstOrDefault(u => u.Username == username);
 
                 if (user != null)
-                    return true;
+                    return false;
             }
 
-            return false;
+            return true;
         }
 	}
 }

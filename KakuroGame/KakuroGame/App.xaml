@@ -2,6 +2,8 @@
 <Application xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="KakuroGame.App">
+
+
     <Application.Resources>
 
         <ResourceDictionary>
@@ -72,6 +74,50 @@
                 <Setter Property="FontAttributes" Value="Bold"/>
             </Style>
 
+            <Style x:Key="btnNumbers3x3" TargetType="Button">
+                <Setter Property="TextColor" Value="Black"/>
+                <Setter Property="CornerRadius" Value="10"/>
+                <Setter Property="FontAttributes" Value="Bold"/>
+                <Setter Property="FontSize" Value="20"/>
+                <Setter Property="Background">
+                    <Setter.Value>
+                        <LinearGradientBrush EndPoint="0,0" x:Name="brush">
+                            <GradientStop Color="Blue" Offset="0.1"/>
+                            <GradientStop Color="Green" Offset="1.0" />
+                        </LinearGradientBrush>
+                    </Setter.Value>
+                </Setter>
+            </Style>
+            <Style x:Key="btnNumbers4x4" TargetType="Button">
+                <Setter Property="TextColor" Value="Black"/>
+                <Setter Property="CornerRadius" Value="10"/>
+                <Setter Property="FontAttributes" Value="Bold"/>
+                <Setter Property="FontSize" Value="20"/>
+                <Setter Property="Background">
+                    <Setter.Value>
+                        <LinearGradientBrush EndPoint="0,0" x:Name="brush">
+                            <GradientStop Color="LightGreen" Offset="0.1"/>
+                            <GradientStop Color="Yellow" Offset="1.0" />
+                        </LinearGradientBrush>
+                    </Setter.Value>
+                </Setter>
+            </Style>
+            <Style x:Key="btnNumbers5x5" TargetType="Button">
+                <Setter Property="TextColor" Value="Black"/>
+                <Setter Property="CornerRadius" Value="10"/>
+                <Setter Property="FontAttributes" Value="Bold"/>
+                <Setter Property="FontSize" Value="20"/>
+                <Setter Property="Background">
+                    <Setter.Value>
+                        <LinearGradientBrush EndPoint="0,0" x:Name="brush">
+                            <GradientStop Color="Yellow" Offset="0.1"/>
+                            <GradientStop Color="Red" Offset="1.0" />
+                        </LinearGradientBrush>
+                    </Setter.Value>
+                </Setter>
+            </Style>
+            
+
             <Style x:Key="buttons" TargetType="Button">
                 <Setter Property="TextColor" Value="Black"/>
                 <Setter Property="FontSize" Value="25"/>
@@ -86,7 +132,6 @@
                         </LinearGradientBrush>
                     </Setter.Value>
                 </Setter>
-
             </Style>
 
             <Style x:Key="btnLogin" TargetType="Button">
@@ -110,7 +155,7 @@
             <Style x:Key="Titles" TargetType="Label">
                 <Setter Property="BackgroundColor" Value="{StaticResource myFavColor}"/>
                 <Setter Property="TextColor" Value="{StaticResource WhiteColor}"/>
-                <Setter Property="FontSize" Value="35"/>
+                <Setter Property="FontSize" Value="33"/>
                 <Setter Property="FontAttributes" Value="Bold"/>
             </Style>
 
@@ -129,6 +174,7 @@
                 </Setter>
             </Style>
 
+            
             <Style x:Key="Bubble1" TargetType="Frame">
                 <Setter Property="BorderColor" Value="Black"/>
                 <Setter Property="HasShadow" Value="True"/>
@@ -144,6 +190,26 @@
                     </Setter.Value>
                 </Setter>
             </Style>
+
+            <!--<Style x:Key="Bubble1" TargetType="Frame">
+                <Style.Triggers>
+                    <DataTrigger TargetType="Frame" Binding="{Binding Source={x:Static local:DeviceInfo.OS}}" Value="iOS">
+                        <Setter Property="BorderColor" Value="Black"/>
+                        <Setter Property="HasShadow" Value="True"/>
+                        <Setter Property="CornerRadius" Value="50"/>
+                        <Setter Property="HeightRequest" Value="100"/>
+                        <Setter Property="WidthRequest" Value="120"/>
+                        <Setter Property="Background">
+                            <Setter.Value>
+                                <LinearGradientBrush EndPoint="0,2">
+                                    <GradientStop Color="Black" Offset="0.0"/>
+                                    <GradientStop Color="White" Offset="2.0" />
+                                </LinearGradientBrush>
+                            </Setter.Value>
+                        </Setter>
+                    </DataTrigger>
+                </Style.Triggers>
+            </Style>-->
 
 
             <Style x:Key="Bubble2" TargetType="Frame">
@@ -189,7 +255,7 @@
                 <Setter Property="TextColor" Value="White" />
                 <Setter Property="PlaceholderColor" Value="White"/>
                 <Setter Property="BackgroundColor" Value="Transparent"/>
-                <Setter Property="Margin" Value="50"/>
+                <Setter Property="Margin" Value="45"/>
                 <Setter Property="MaxLength" Value="1"/>
                 <Setter Property="Keyboard" Value="Numeric"/>
             </Style>
@@ -198,7 +264,7 @@
                 <Setter Property="TextColor" Value="White" />
                 <Setter Property="PlaceholderColor" Value="White"/>
                 <Setter Property="BackgroundColor" Value="Transparent"/>
-                <Setter Property="Margin" Value="34"/>
+                <Setter Property="Margin" Value="30"/>
                 <Setter Property="MaxLength" Value="1"/>
                 <Setter Property="Keyboard" Value="Numeric"/>
             </Style>
@@ -325,8 +391,9 @@
                 <Setter Property="AnchorX" Value="0"/>
             </Style>
 
-        </ResourceDictionary>
+        </ResourceDictionary >
 
+       
 
     </Application.Resources>
 </Application>
